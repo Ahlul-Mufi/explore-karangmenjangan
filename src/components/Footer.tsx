@@ -21,7 +21,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Compass className="w-6 h-6" />
               <span className="font-sans text-lg font-semibold">
-                Karangmenjangan
+                KAWIKA
               </span>
             </div>
             <p className="font-sans text-sm text-white/70 leading-relaxed">
@@ -67,7 +67,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="font-sans text-sm text-white/50">
-            &copy; {new Date().getFullYear()} Karangmenjangan Heritage &amp; Nature. All rights reserved.
+            &copy; {new Date().getFullYear()} KAWIKA (Kampung Wisata Karangmenjangan). All rights reserved.
           </p>
         </div>
       </div>

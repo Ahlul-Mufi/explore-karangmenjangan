@@ -44,7 +44,7 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap-2 text-white">
               <Compass className="w-6 h-6" />
               <span className="font-sans text-lg font-semibold tracking-wide">
-                Karangmenjangan
+                KAWIKA
               </span>
             </Link>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
               <Link to="/" className="flex items-center gap-2 text-white">
                 <Compass className="w-6 h-6" />
                 <span className="font-sans text-lg font-semibold">
-                  Karangmenjangan
+                  KAWIKA
                 </span>
               </Link>
               <button
