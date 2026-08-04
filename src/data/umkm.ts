@@ -1,46 +1,28 @@
 import type { UmkmItem } from '../types'
+import coconutProducts from '../assets/IMG_7753.JPG.jpeg'
+import smokedFish from '../assets/IMG_8430.JPG.jpeg'
+import saltedFish from '../assets/ikan asin.jpeg'
 
 export const umkmItems: UmkmItem[] = [
   {
     id: '1',
-    name: 'Olahan Ikan Asap',
-    category: 'Kuliner',
-    description: 'Ikan segar hasil tangkapan nelayan Karangmenjangan yang diolah dengan teknik pengasapan tradisional, menghasilkan cita rasa khas pesisir.',
-    image: '/images/olahan-ikan-asap.jpg',
+    name: 'Smoked Fish Products',
+    category: 'Culinary',
+    description: 'Fresh fish caught by Karangmenjangan fishermen, processed using traditional smoking techniques to create a distinctive coastal flavor.',
+    image: smokedFish,
   },
   {
     id: '2',
-    name: 'Abon Ikan',
-    category: 'Kuliner',
-    description: 'Olahan ikan laut pilihan yang disuwir dan dibumbui rempah pilihan, cocok sebagai oleh-oleh khas Karangmenjangan.',
-    image: '/images/abon-ikan.jpg',
+    name: 'Coconut Products',
+    category: 'Local Products',
+    description: 'Coconut meat drying as well as brown sugar production from coconut sap.',
+    image: coconutProducts,
   },
   {
     id: '3',
-    name: 'Kerupuk Ikan',
-    category: 'Kuliner',
-    description: 'Kerupuk berbahan dasar ikan laut yang renyah dan gurih, camilan khas yang diproduksi oleh masyarakat setempat.',
-    image: '/images/kerupuk-ikan.jpg',
-  },
-  {
-    id: '4',
-    name: 'Pisang Goreng Khas',
-    category: 'Kuliner',
-    description: 'Olahan pisang lokal yang digoreng dengan resep tradisional, menjadi camilan favorit pengunjung.',
-    image: '/images/pisang-goreng.jpg',
-  },
-  {
-    id: '5',
-    name: 'Produk Olahan Kelapa',
-    category: 'Produk Lokal',
-    description: 'Berbagai produk olahan kelapa seperti minyak kelapa murni dan kerajinan dari bahan kelapa.',
-    image: '/images/olahan-kelapa.jpg',
-  },
-  {
-    id: '6',
-    name: 'Ikan Asin Khas Karangmenjangan',
-    category: 'Kuliner',
-    description: 'Ikan asin produksi lokal dengan proses penggaraman tradisional yang menghasilkan cita rasa khas pesisir selatan Lumajang.',
-    image: '/images/ikan-asin.jpg',
+    name: 'Karangmenjangan Salted Fish',
+    category: 'Culinary',
+    description: 'Locally produced salted fish made through a traditional salting process, with the distinctive taste of Lumajang\'s southern coast.',
+    image: saltedFish,
   },
 ]

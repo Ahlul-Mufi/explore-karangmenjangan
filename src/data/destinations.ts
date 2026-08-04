@@ -1,96 +1,99 @@
-import type { Destination } from '../types'
+import type { Destination } from "../types";
+import viewImg from "../assets/view.jpg.jpeg";
+import img7548 from "../assets/IMG_7548.JPG.jpeg";
+import img7573 from "../assets/IMG_7573.JPG.jpeg";
+import img7583 from "../assets/IMG_7583.JPG.jpeg";
+import img7642 from "../assets/IMG_7642.JPG.jpeg";
+import img7643 from "../assets/IMG_7643.JPG.jpeg";
+import img7874 from "../assets/IMG_7874.JPG.jpeg";
+import susurSungai from "../assets/susur sungai.jpg.jpeg";
+import tpiImg from "../assets/TPI.jpg.jpeg";
+import tpiWa from "../assets/WhatsApp Image 2026-08-04 at 17.25.17.jpeg";
+import img8305 from "../assets/IMG_8305.JPG.jpeg";
+import img8321 from "../assets/IMG_8321.JPG.jpeg";
+import watuGodeg from "../assets/pantai watu godhek.jpg.jpeg";
+import watuWa1544 from "../assets/WhatsApp Image 2026-08-04 at 15.44.45.jpeg";
+import img8816 from "../assets/IMG_8816.JPG.jpeg";
+import img8821 from "../assets/IMG_8821.JPG.jpeg";
+import img8825 from "../assets/IMG_8825.JPG.jpeg";
+import img8851 from "../assets/IMG_8851.JPG.jpeg";
 
 export const destinations: Destination[] = [
   {
-    id: '1',
-    slug: 'pantai-watu-godeg',
-    title: 'Pantai Watu Godeg',
-    category: 'Pantai',
-    description: 'Destinasi wisata pantai utama di Dusun Karangmenjangan dengan panorama Samudera Indonesia yang memukau.',
-    content: `Pantai Watu Godeg (juga dikenal sebagai Pantai Godek atau Watu Gedek) merupakan destinasi wisata pantai utama di Dusun Karangmenjangan. Pantai ini menawarkan pemandangan langsung ke Samudera Indonesia dengan ombak yang khas dan pasir yang membentang.
+    id: "1",
+    slug: "pantai-watu-godeg",
+    title: "Pantai Watu Godheg",
+    category: "Beach",
+    description:
+      "The main beach destination in Karangmenjangan Hamlet, offering breathtaking views of the Indian Ocean.",
+    content: `Pantai Watu Godeg (also known as Pantai Godek or Watu Gedek) is the main beach destination in Karangmenjangan Hamlet. The beach offers a direct view of the Indian Ocean with its characteristic waves and long stretches of sand.
 
-Batu-batu besar yang tersebar di sepanjang pantai menjadi ciri khas dan asal-usul nama "Watu Godeg" (batu besar). Pantai ini menjadi tempat favorit bagi masyarakat lokal dan pengunjung untuk menikmati matahari terbenam.
+The large rocks scattered along the shore are a signature feature and the origin of the name "Watu Godeg" (big rock). The beach is a favorite spot for locals and visitors alike to enjoy the sunset.
 
-Akses menuju pantai dapat ditempuh dari pusat Desa Bulurejo dengan kendaraan roda dua maupun roda empat.`,
-    location: 'Dusun Karangmenjangan, Desa Bulurejo, Kecamatan Tempursari, Kabupaten Lumajang',
-    image: '/images/pantai-watu-godeg.jpg',
-    gallery: [
-      '/images/pantai-watu-godeg.jpg',
-      '/images/pantai-watu-godeg-2.jpg',
-    ],
-    facilities: ['Area parkir', 'Warung makan'],
-    mapsUrl: 'https://www.google.com/maps/search/Pantai+Watu+Godeg+Karangmenjangan',
+The beach can be reached from the center of Bulurejo Village by two-wheeled or four-wheeled vehicles.`,
+    location:
+      "Karangmenjangan Hamlet, Bulurejo Village, Tempursari District, Lumajang Regency",
+    image: viewImg,
+    gallery: [viewImg, watuGodeg, watuWa1544, img7548, img7573, img7583],
+    facilities: ["Parking area", "Food stalls"],
+    mapsUrl:
+      "https://www.google.com/maps/search/Pantai+Watu+Godeg+Karangmenjangan",
   },
   {
-    id: '2',
-    slug: 'susur-sungai',
-    title: 'Susur Sungai Karangmenjangan',
-    category: 'Wisata Alam',
-    description: 'Nikmati pengalaman menyusuri sungai yang bermuara ke Samudera Indonesia dengan pemandangan alam yang masih asri.',
-    content: `Wisata susur sungai di Karangmenjangan menawarkan pengalaman unik menyusuri aliran sungai yang bermuara langsung ke Samudera Indonesia. Sepanjang perjalanan, pengunjung akan disuguhi pemandangan alam yang masih alami dengan vegetasi tepi sungai yang hijau.
+    id: "2",
+    slug: "susur-sungai",
+    title: "Susur Sungai Karangmenjangan",
+    category: "Nature",
+    description:
+      "Enjoy the experience of exploring a river that flows into the Indian Ocean, surrounded by pristine natural scenery.",
+    content: `The river exploration tour in Karangmenjangan offers a unique experience of tracing a river that flows directly into the Indian Ocean. Along the way, visitors are treated to untouched natural scenery with lush green riverbank vegetation.
 
-Aktivitas ini cocok bagi pencinta alam yang ingin menikmati ketenangan dan keindahan alam Karangmenjangan dari perspektif yang berbeda.`,
-    location: 'Dusun Karangmenjangan, Desa Bulurejo, Kecamatan Tempursari, Kabupaten Lumajang',
-    image: '/images/susur-sungai.jpg',
-    gallery: [
-      '/images/susur-sungai.jpg',
-    ],
-    facilities: ['Pemandu lokal'],
-    mapsUrl: 'https://www.google.com/maps/search/Susur+Sungai+Karangmenjangan',
+This activity is perfect for nature lovers who want to enjoy the tranquility and beauty of Karangmenjangan from a different perspective.`,
+    location:
+      "Karangmenjangan Hamlet, Bulurejo Village, Tempursari District, Lumajang Regency",
+    image: img7643,
+    gallery: [img7643, susurSungai, img7642, img7874],
+    facilities: ["Local guide"],
+    mapsUrl: "https://www.google.com/maps/search/Susur+Sungai+Karangmenjangan",
   },
   {
-    id: '3',
-    slug: 'muara-karangmenjangan',
-    title: 'Muara Karangmenjangan',
-    category: 'Wisata Alam',
-    description: 'Pertemuan aliran sungai dengan Samudera Indonesia yang menyajikan pemandangan eksotis dan aktivitas nelayan tradisional.',
-    content: `Muara Karangmenjangan merupakan titik pertemuan antara aliran sungai dengan Samudera Indonesia. Kawasan ini menjadi saksi bisu aktivitas nelayan tradisional yang keluar-masuk melaut menggunakan perahu-perahu kecil.
+    id: "3",
+    slug: "pantai-tpi-karangmenjangan",
+    title: "Pantai TPI Karangmenjangan",
+    category: "Beach",
+    description:
+      "The center of fishermen's activities and marine catch auctions, forming the economic heartbeat of the coastal community.",
+    content: `The Fish Auction Hall (TPI) in Karangmenjangan is the center of fishing activities for the local community. Every morning, fishermen return from the sea and their catch is auctioned off here.
 
-Pemandangan di muara sangat memukau, terutama saat sore hari ketika matahari mulai terbenam di ufuk barat. Kawasan ini juga menjadi spot fotografi yang menarik.`,
-    location: 'Dusun Karangmenjangan, Desa Bulurejo, Kecamatan Tempursari, Kabupaten Lumajang',
-    image: '/images/muara.jpg',
-    gallery: [
-      '/images/muara.jpg',
-    ],
-    facilities: ['Area parkir'],
-    mapsUrl: 'https://www.google.com/maps/search/Muara+Karangmenjangan',
+Visitors can witness the fish auction firsthand, interact with the fishermen, and buy fresh seafood. The TPI is an interesting educational tourism destination for understanding the life of Karangmenjangan's coastal community.
+
+The nickname "TPI Beach" comes from the Fish Auction Center (Tempat Pelelangan Ikan), which was famously busy before the area was struck by coastal abrasion. Many visitors mistakenly assume that TPI stands for Tempursari.`,
+    location:
+      "Karangmenjangan Hamlet, Bulurejo Village, Tempursari District, Lumajang Regency",
+    image: tpiImg,
+    gallery: [tpiImg, tpiWa, img8305, img8321],
+    facilities: ["Parking area", "Auction hall"],
+    mapsUrl: "https://www.google.com/maps/search/TPI+Karangmenjangan",
   },
   {
-    id: '4',
-    slug: 'tempat-pelelangan-ikan',
-    title: 'Tempat Pelelangan Ikan (TPI)',
-    category: 'Wisata Edukasi',
-    description: 'Pusat aktivitas nelayan dan pelelangan hasil tangkapan laut yang menjadi denyut nadi ekonomi masyarakat pesisir.',
-    content: `Tempat Pelelangan Ikan (TPI) di Karangmenjangan merupakan pusat aktivitas perikanan masyarakat setempat. Setiap pagi, nelayan kembali dari melaut dan hasil tangkapannya dilelang di tempat ini.
+    id: "4",
+    slug: "muara-karangmenjangan",
+    title: "Muara Karangmenjangan",
+    category: "Nature",
+    description:
+      "Where the river meets the Indian Ocean, offering exotic scenery and glimpses of traditional fishermen at work.",
+    content: `The Karangmenjangan estuary is where the river flow meets the Indian Ocean. This area silently witnesses the daily activities of traditional fishermen heading out to sea in small boats.
 
-Pengunjung dapat menyaksikan langsung aktivitas pelelangan ikan, berinteraksi dengan nelayan, dan membeli hasil laut segar. TPI menjadi destinasi wisata edukasi yang menarik untuk memahami kehidupan masyarakat pesisir Karangmenjangan.`,
-    location: 'Dusun Karangmenjangan, Desa Bulurejo, Kecamatan Tempursari, Kabupaten Lumajang',
-    image: '/images/tpi.jpg',
-    gallery: [
-      '/images/tpi.jpg',
-    ],
-    facilities: ['Area parkir', 'Tempat pelelangan'],
-    mapsUrl: 'https://www.google.com/maps/search/TPI+Karangmenjangan',
+The estuary scenery is stunning, especially in the late afternoon as the sun sets on the western horizon. The area is also an attractive spot for photography.`,
+    location:
+      "Karangmenjangan Hamlet, Bulurejo Village, Tempursari District, Lumajang Regency",
+    image: img8825,
+    gallery: [img8825, img8851, img8816, img8821],
+    facilities: ["Parking area"],
+    mapsUrl: "https://www.google.com/maps/search/Muara+Karangmenjangan",
   },
-  {
-    id: '5',
-    slug: 'wisata-buah-naga',
-    title: 'Wisata Buah Naga',
-    category: 'Agrowisata',
-    description: 'Kebun buah naga yang menjadi salah satu potensi agrowisata di kawasan Karangmenjangan.',
-    content: `Wisata Buah Naga di Karangmenjangan menawarkan pengalaman agrowisata yang unik. Pengunjung dapat melihat langsung perkebunan buah naga, belajar tentang proses budidaya, dan menikmati buah naga segar yang dipetik langsung dari pohonnya.
-
-Kebun buah naga ini menjadi salah satu destinasi yang menarik bagi wisatawan yang ingin menikmati suasana pedesaan dan belajar tentang pertanian lokal.`,
-    location: 'Dusun Karangmenjangan, Desa Bulurejo, Kecamatan Tempursari, Kabupaten Lumajang',
-    image: '/images/buah-naga.jpg',
-    gallery: [
-      '/images/buah-naga.jpg',
-    ],
-    facilities: ['Area parkir', 'Kebun buah'],
-    mapsUrl: 'https://www.google.com/maps/search/Wisata+Buah+Naga+Karangmenjangan',
-  },
-]
+];
 
 export function getDestinationBySlug(slug: string): Destination | undefined {
-  return destinations.find((d) => d.slug === slug)
+  return destinations.find((d) => d.slug === slug);
 }

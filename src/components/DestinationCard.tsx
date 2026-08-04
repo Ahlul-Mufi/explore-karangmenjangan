@@ -21,9 +21,11 @@ export default function DestinationCard({ destination, index = 0 }: DestinationC
         className="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
       >
         <div className="aspect-[4/3] bg-[#FEFAE0] overflow-hidden">
-          <div className="w-full h-full bg-gradient-to-br from-[#184332]/20 to-[#FEFAE0] flex items-center justify-center text-[#184332]/30 font-sans text-lg">
-            {destination.title}
-          </div>
+          <img
+            src={destination.image}
+            alt={destination.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
         </div>
         <div className="p-5">
           <span className="inline-block px-3 py-1 bg-[#BC6C25]/10 text-[#BC6C25] text-xs font-sans font-semibold rounded-full mb-3">

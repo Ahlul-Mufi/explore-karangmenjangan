@@ -20,11 +20,19 @@ export default function Gallery({ items }: GalleryProps) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
-            className="aspect-square bg-[#FEFAE0] rounded-xl overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+            className="bg-[#FEFAE0] rounded-xl overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
             onClick={() => setSelected(item)}
           >
-            <div className="w-full h-full bg-gradient-to-br from-[#184332]/15 to-[#FEFAE0] flex items-center justify-center text-[#184332]/30 font-sans text-sm p-2 text-center">
-              {item.alt}
+            <div className="aspect-square w-full bg-[#FEFAE0]">
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="px-2 py-2 text-center">
+              <p className="font-sans text-xs text-[#184332] truncate">{item.alt}</p>
             </div>
           </motion.div>
         ))}
@@ -54,8 +62,12 @@ export default function Gallery({ items }: GalleryProps) {
               >
                 <X className="w-6 h-6" />
               </button>
-              <div className="aspect-[4/3] bg-[#FEFAE0] rounded-xl flex items-center justify-center text-[#184332]/30 font-sans text-lg">
-                {selected.alt}
+              <div className="aspect-[4/3] bg-[#FEFAE0] rounded-xl overflow-hidden">
+                <img
+                  src={selected.src}
+                  alt={selected.alt}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <p className="text-white text-center mt-3 font-sans text-sm">{selected.alt}</p>
             </motion.div>

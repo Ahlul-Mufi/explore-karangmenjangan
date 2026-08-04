@@ -4,35 +4,35 @@ export const cultureItems: CultureItem[] = [
   {
     id: '1',
     title: 'Larung Sesaji',
-    subtitle: 'Tradisi Syukur Masyarakat Pesisir',
-    description: 'Ritual tahunan masyarakat pesisir Karangmenjangan sebagai wujud syukur atas hasil laut yang melimpah.',
+    subtitle: 'A Coastal Community\'s Thanksgiving Tradition',
+    description: 'An annual ritual of the Karangmenjangan coastal community as an expression of gratitude for the abundant bounty of the sea.',
     image: '/images/larung-sesaji.jpg',
-    content: `Larung Sesaji merupakan tradisi turun-temurun masyarakat pesisir di Dusun Karangmenjangan. Ritual ini dilakukan sebagai bentuk rasa syukur kepada Tuhan Yang Maha Esa atas berkah dan hasil laut yang melimpah.
+    content: `Larung Sesaji is a hereditary tradition of the coastal community in Karangmenjangan Hamlet. This ritual is performed as an expression of gratitude to God Almighty for the blessings and abundant bounty of the sea.
 
-Dalam prosesinya, masyarakat membawa sesaji yang kemudian dilarung (dihanyutkan) ke laut. Ritual ini biasanya dilakukan pada waktu-waktu tertentu yang telah disepakati oleh tetua adat dan masyarakat setempat.
+During the procession, the community brings offerings which are then floated (washed away) into the sea. The ritual is usually held at specific times agreed upon by the traditional elders and the local community.
 
-Tradisi ini menjadi simbol harmoni antara manusia, alam, dan Sang Pencipta. Larung Sesaji juga menjadi daya tarik wisata budaya yang unik di Karangmenjangan.`,
+This tradition symbolizes harmony between humans, nature, and the Creator. Larung Sesaji is also a unique cultural tourism attraction in Karangmenjangan.`,
   },
   {
     id: '2',
-    title: 'Kehidupan Nelayan',
-    subtitle: 'Aktivitas Sehari-hari Masyarakat Pesisir',
-    description: 'Sebagian besar masyarakat Karangmenjangan menggantungkan hidupnya sebagai nelayan di Samudera Indonesia.',
+    title: 'Life of the Fishermen',
+    subtitle: 'Daily Activities of the Coastal Community',
+    description: 'Most of the Karangmenjangan community makes a living as fishermen on the Indian Ocean.',
     image: '/images/nelayan.jpg',
-    content: `Masyarakat Dusun Karangmenjangan sebagian besar bermata pencaharian sebagai nelayan. Setiap pagi, puluhan perahu nelayan terlihat melaut mencari ikan di Samudera Indonesia.
+    content: `The majority of the people in Karangmenjangan Hamlet make their living as fishermen. Every morning, dozens of fishing boats can be seen heading out to the Indian Ocean to catch fish.
 
-Aktivitas nelayan dimulai sejak dini hari. Mereka melaut menggunakan perahu tradisional dan modern. Hasil tangkapan berupa berbagai jenis ikan laut segar kemudian dibawa ke Tempat Pelelangan Ikan (TPI) untuk dijual.
+Fishing activities begin at dawn. They sail using traditional and modern boats. Their catch, consisting of various kinds of fresh seafood, is then brought to the Fish Auction Hall (TPI) to be sold.
 
-Kehidupan nelayan di Karangmenjangan menjadi cerminan tradisi maritim yang telah berlangsung turun-temurun. Kearifan lokal dalam menjaga kelestarian laut masih dijaga oleh masyarakat setempat.`,
+The fisherman's life in Karangmenjangan reflects a maritime tradition that has been passed down through generations. Local wisdom in preserving the sea is still upheld by the community.`,
   },
   {
     id: '3',
-    title: 'Keberagamaan & Kepercayaan',
-    subtitle: 'Harmoni dalam Keberagaman',
-    description: 'Masyarakat Karangmenjangan hidup rukun dalam keberagaman agama dengan mayoritas pemeluk Islam.',
+    title: 'Religious Diversity & Belief',
+    subtitle: 'Harmony in Diversity',
+    description: 'The Karangmenjangan community lives harmoniously in religious diversity, with a Muslim majority.',
     image: '/images/keberagamaan.jpg',
-    content: `Masyarakat Desa Bulurejo, termasuk Dusun Karangmenjangan, hidup dalam keberagamaan yang harmonis. Dari total 4.183 jiwa, sebanyak 4.048 orang (96,77%) memeluk agama Islam, 80 orang beragama Hindu, dan 55 orang beragama Kristen.
+    content: `The people of Bulurejo Village, including Karangmenjangan Hamlet, live in religious harmony. Out of a total of 4,183 residents, 4,048 people (96.77%) are Muslim, 80 are Hindu, and 55 are Christian.
 
-Sarana ibadah yang tersedia meliputi 6 masjid, 15 musholla, dan 1 pure (pura). Keberagaman ini mencerminkan toleransi yang tinggi antarumat beragama di wilayah pesisir selatan Lumajang.`,
+Available places of worship include 6 mosques, 15 prayer rooms (musholla), and 1 temple (pura). This diversity reflects the high level of tolerance among religious communities in the southern coastal area of Lumajang.`,
   },
 ]

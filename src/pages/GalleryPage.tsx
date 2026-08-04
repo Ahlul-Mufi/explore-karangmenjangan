@@ -3,7 +3,7 @@ import SectionHeading from '../components/SectionHeading'
 import Gallery from '../components/Gallery'
 import { galleryItems } from '../data/gallery'
 
-const categories = ['All', 'Pantai', 'Wisata Alam', 'Edukasi', 'Agrowisata', 'Budaya', 'Kuliner']
+const categories = ['All', 'Beach', 'Nature', 'Culture', 'Culinary']
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState('All')

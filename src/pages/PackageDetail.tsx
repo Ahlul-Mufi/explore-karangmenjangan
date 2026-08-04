@@ -18,13 +18,13 @@ export default function PackageDetail() {
   if (!pkg) {
     return (
       <div className="pt-24 pb-16 px-4 text-center">
-        <h2 className="text-2xl font-sans text-[#184332] mb-4">Paket tidak ditemukan</h2>
-        <Link to="/packages" className="text-[#BC6C25] underline">Kembali ke daftar paket</Link>
+        <h2 className="text-2xl font-sans text-[#184332] mb-4">Package not found</h2>
+        <Link to="/packages" className="text-[#BC6C25] underline">Back to packages</Link>
       </div>
     )
   }
 
-  const waUrl = `https://wa.me/${pkg.whatsapp}?text=${encodeURIComponent(`Halo, saya tertarik dengan paket "${pkg.name}". Mohon info lebih lanjut.`)}`
+  const waUrl = `https://wa.me/${pkg.whatsapp}?text=${encodeURIComponent(`Hello, I am interested in the "${pkg.name}" package. Please provide more information.`)}`
 
   return (
     <div className="pt-24 pb-16">
@@ -44,7 +44,7 @@ export default function PackageDetail() {
           to="/packages"
           className="inline-flex items-center gap-2 font-sans text-sm text-[#BC6C25] mt-6 hover:underline"
         >
-          <ArrowLeft className="w-4 h-4" /> Kembali ke Paket Wisata
+          <ArrowLeft className="w-4 h-4" /> Back to Tour Packages
         </Link>
       </div>
 
@@ -58,16 +58,16 @@ export default function PackageDetail() {
         >
           <div className="bg-white rounded-xl p-4 text-center shadow-sm">
             <Clock className="w-6 h-6 text-[#BC6C25] mx-auto mb-2" />
-            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Durasi</p>
+            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Duration</p>
             <p className="font-sans text-sm font-semibold text-[#184332]">{pkg.duration}</p>
           </div>
           <div className="bg-white rounded-xl p-4 text-center shadow-sm">
             <Users className="w-6 h-6 text-[#BC6C25] mx-auto mb-2" />
-            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Peserta</p>
-            <p className="font-sans text-sm font-semibold text-[#184332]">{pkg.minPerson}-{pkg.maxPerson} orang</p>
+            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Participants</p>
+            <p className="font-sans text-sm font-semibold text-[#184332]">{pkg.minPerson}-{pkg.maxPerson} people</p>
           </div>
           <div className="bg-white rounded-xl p-4 text-center shadow-sm col-span-2 md:col-span-2">
-            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Harga Mulai Dari</p>
+            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Starting From</p>
             <p className="font-sans text-2xl font-bold text-[#BC6C25]">{formatPrice(pkg.price)}</p>
             <p className="font-sans text-[10px] text-[#26332E]/50">{pkg.priceNote}</p>
           </div>
@@ -80,7 +80,7 @@ export default function PackageDetail() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="bg-white rounded-2xl shadow-md p-8 md:p-10 mb-8"
         >
-          <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Tentang Paket Ini</h2>
+          <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">About This Package</h2>
           <p className="font-sans text-base text-[#26332E]/80 leading-relaxed mb-6">{pkg.description}</p>
 
           <h3 className="text-lg font-sans font-bold text-[#184332] mb-3">Highlights</h3>
@@ -124,7 +124,7 @@ export default function PackageDetail() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-white rounded-2xl shadow-md p-8"
           >
-            <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Fasilitas</h2>
+            <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Facilities</h2>
             <ul className="space-y-2">
               {pkg.facilities.map((f, i) => (
                 <li key={i} className="flex items-center gap-2 font-sans text-sm text-[#26332E]/80">
@@ -140,9 +140,9 @@ export default function PackageDetail() {
             transition={{ duration: 0.5, delay: 0.35 }}
             className="bg-white rounded-2xl shadow-md p-8"
           >
-            <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Termasuk & Tidak Termasuk</h2>
+            <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Included & Not Included</h2>
             <div className="mb-4">
-              <p className="font-sans text-xs font-semibold text-green-600 uppercase tracking-wider mb-2">Termasuk</p>
+              <p className="font-sans text-xs font-semibold text-green-600 uppercase tracking-wider mb-2">Included</p>
               <ul className="space-y-1">
                 {pkg.includes.map((item, i) => (
                   <li key={i} className="flex items-center gap-2 font-sans text-sm text-[#26332E]/80">
@@ -152,7 +152,7 @@ export default function PackageDetail() {
               </ul>
             </div>
             <div>
-              <p className="font-sans text-xs font-semibold text-red-500 uppercase tracking-wider mb-2">Tidak Termasuk</p>
+              <p className="font-sans text-xs font-semibold text-red-500 uppercase tracking-wider mb-2">Not Included</p>
               <ul className="space-y-1">
                 {pkg.excludes.map((item, i) => (
                   <li key={i} className="flex items-center gap-2 font-sans text-sm text-[#26332E]/80">
@@ -171,10 +171,10 @@ export default function PackageDetail() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="bg-white rounded-2xl shadow-md p-8 mb-8"
         >
-          <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Lokasi</h2>
+          <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Location</h2>
           <p className="flex items-start gap-2 font-sans text-sm text-[#26332E]/70">
             <MapPin className="h-5 w-5 text-[#BC6C25] shrink-0 mr-1" />
-            Dusun Karangmenjangan, Desa Bulurejo, Kecamatan Tempursari, Kabupaten Lumajang, Jawa Timur 67375
+            Karangmenjangan Hamlet, Bulurejo Village, Tempursari District, Lumajang Regency, East Java 67375
           </p>
         </motion.div>
 
@@ -185,8 +185,8 @@ export default function PackageDetail() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="bg-[#184332] rounded-2xl p-8 text-center"
         >
-          <h2 className="text-2xl font-sans font-bold text-white mb-3">Tertarik dengan paket ini?</h2>
-          <p className="text-white/70 font-sans text-sm mb-6">Hubungi kami via WhatsApp untuk informasi dan pemesanan</p>
+          <h2 className="text-2xl font-sans font-bold text-white mb-3">Interested in this package?</h2>
+          <p className="text-white/70 font-sans text-sm mb-6">Contact us via WhatsApp for more information and bookings</p>
           <a
             href={waUrl}
             target="_blank"

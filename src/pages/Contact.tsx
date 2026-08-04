@@ -25,9 +25,9 @@ export default function Contact() {
                   <div>
                     <p className="font-sans font-semibold text-[#184332] text-sm">Address</p>
                     <p className="font-sans text-sm text-[#26332E]/70">
-                      Dusun Karangmenjangan<br />
-                      Desa Bulurejo, Kecamatan Tempursari<br />
-                      Kabupaten Lumajang, Jawa Timur 67375
+                      Karangmenjangan Hamlet<br />
+                      Bulurejo Village, Tempursari District<br />
+                      Lumajang Regency, East Java 67375
                     </p>
                   </div>
                 </div>
@@ -43,10 +43,10 @@ export default function Contact() {
                 <div className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-[#BC6C25] mt-1" />
                   <div>
-                    <p className="font-sans font-semibold text-[#184332] text-sm">Kantor Desa</p>
+                    <p className="font-sans font-semibold text-[#184332] text-sm">Village Office</p>
                     <p className="font-sans text-sm text-[#26332E]/70">
-                      Jl. Cendrawasih No. 29, Desa Bulurejo<br />
-                      Kode Pos 67375
+                      Jl. Cendrawasih No. 29, Bulurejo Village<br />
+                      Postal Code 67375
                     </p>
                   </div>
                 </div>
@@ -56,15 +56,15 @@ export default function Contact() {
               <h3 className="text-2xl font-sans font-bold text-[#184332] mb-4">Quick Info</h3>
               <div className="space-y-4">
                 <div className="bg-white rounded-xl p-4">
-                  <p className="font-sans font-semibold text-[#184332] text-sm">Kepala Desa Bulurejo</p>
+                  <p className="font-sans font-semibold text-[#184332] text-sm">Head of Bulurejo Village</p>
                   <p className="font-sans text-sm text-[#26332E]/70">Rohman Adi</p>
                 </div>
                 <div className="bg-white rounded-xl p-4">
-                  <p className="font-sans font-semibold text-[#184332] text-sm">Kepala Dusun Karangmenjangan</p>
+                  <p className="font-sans font-semibold text-[#184332] text-sm">Head of Karangmenjangan Hamlet</p>
                   <p className="font-sans text-sm text-[#26332E]/70">Nurkholis</p>
                 </div>
                 <p className="font-sans text-xs text-[#26332E]/50 mt-4">
-                  Website ini adalah bagian dari program BBK (Bakti Bina Kampus) untuk mempromosikan potensi wisata dan UMKM lokal.
+                  This website is part of the BBK (Bakti Bina Kampus) program to promote local tourism potential and UMKM.
                 </p>
               </div>
             </div>

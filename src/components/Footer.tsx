@@ -4,7 +4,7 @@ import { Compass, Mail, MapPin } from 'lucide-react'
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Explore', to: '/explore' },
-  { label: 'Paket Wisata', to: '/packages' },
+  { label: 'Packages', to: '/packages' },
   { label: 'About', to: '/about' },
   { label: 'Culture', to: '/culture' },
   { label: 'UMKM', to: '/umkm' },

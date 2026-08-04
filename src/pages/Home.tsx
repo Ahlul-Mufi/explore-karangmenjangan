@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, ChevronRight } from 'lucide-react'
+import { ArrowDown, ChevronRight, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
 import Button from '../components/Button'
@@ -15,6 +15,8 @@ import PackageCard from '../components/PackageCard'
 import TestimonialCarousel from '../components/TestimonialCarousel'
 import heroImg from '../assets/CETAK (2).png'
 import cetakImg from '../assets/CETAK.png'
+import viewImg from '../assets/view.jpg.jpeg'
+import localLifeImg from '../assets/IMG_8059.JPG.jpeg'
 
 export default function Home() {
   const [flyingDone, setFlyingDone] = useState(false)
@@ -57,7 +59,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-[#BC6C25] font-sans text-sm md:text-base uppercase tracking-widest mb-4"
             >
-              Hidden Paradise in East Java
+              Hidden Amazon in East Java
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -65,9 +67,9 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-white font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
             >
-              Explore the Hidden Beauty
+              Welcome to Kampung Wisata
               <br />
-              <span className="text-[#BC6C25]">of Karangmenjangan</span>
+              <span className="text-[#BC6C25]">Karangmenjangan (KaWiKa)</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -75,7 +77,7 @@ export default function Home() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="mt-6 mb-8 text-white/80 font-sans text-lg md:text-xl max-w-2xl mx-auto"
             >
-              Discover nature, heritage, and local life.
+              The term 'kampung' in 'Kampung Wisata Karangmenjangan' refers to a local term that identically refers to a part of the hamlet area as 'kampung'.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -173,8 +175,8 @@ export default function Home() {
       <section className="py-20 px-4 bg-[#FEFAE0]">
         <div className="max-w-6xl mx-auto">
           <SectionHeading
-            title="Paket Wisata"
-            subtitle="Pilih paket wisata yang sesuai dengan keinginan Anda"
+            title="Tour Packages"
+            subtitle="Choose the tour package that suits your needs"
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {packages.slice(0, 3).map((pkg, i) => (
@@ -183,7 +185,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <Button to="/packages" variant="primary">
-              Lihat semua paket
+              View all packages
             </Button>
           </div>
         </div>
@@ -218,9 +220,13 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="aspect-[4/5] bg-gradient-to-br from-[#184332]/20 to-[#FEFAE0] rounded-3xl flex items-center justify-center shadow-lg"
+              className="aspect-[4/5] bg-gradient-to-br from-[#184332]/20 to-[#FEFAE0] rounded-3xl flex items-center justify-center shadow-lg overflow-hidden"
             >
-              <span className="text-[#184332]/30 font-sans text-lg">Nature Image</span>
+              <img
+                src={viewImg}
+                alt="Immerse yourself in nature"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
         </div>
@@ -285,13 +291,17 @@ export default function Home() {
                 </p>
               </motion.div>
               <motion.div
-                className="order-1 md:order-2 aspect-[5/6] bg-gradient-to-br from-[#184332]/10 to-[#EFE1C6] rounded-3xl flex items-center justify-center shadow-lg"
+                className="order-1 md:order-2 aspect-[5/6] bg-gradient-to-br from-[#184332]/10 to-[#EFE1C6] rounded-3xl flex items-center justify-center shadow-lg overflow-hidden"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="text-[#184332]/30 font-sans text-lg">Local Life</span>
+                <img
+                  src={localLifeImg}
+                  alt="Live the local life"
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
             </div>
           </div>
@@ -315,8 +325,12 @@ export default function Home() {
                   transition={{ duration: 0.4, delay: (i % 3) * 0.1 }}
                   className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="aspect-[4/3] bg-gradient-to-br from-[#BA6C25]/10 to-[#184332]/5 flex items-center justify-center">
-                    <span className="text-[#184332]/30 font-sans text-sm">{item.name}</span>
+                  <div className="aspect-[4/3] bg-gradient-to-br from-[#BA6C25]/10 to-[#184332]/5 flex items-center justify-center overflow-hidden">
+                    {item.image && !item.image.startsWith('/images/') ? (
+                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <span className="text-[#184332]/30 font-sans text-sm">{item.name}</span>
+                    )}
                   </div>
                   <div className="p-4">
                     <span className="inline-block px-2 py-0.5 bg-[#0077B6]/10 text-[#0077B6] rounded text-xs font-sans font-semibold mb-2">
@@ -367,30 +381,36 @@ export default function Home() {
           <div className="order-2 md:order-1">
             <div className="bg-white rounded-2xl shadow-md p-8">
               <h3 className="font-sans text-2xl font-semibold text-[#184332] mb-4">Karangmenjangan</h3>
-              <p className="font-sans text-sm text-[#26332E] mb-2">Dusun Karangmenjangan</p>
-              <p className="font-sans text-sm text-[#26332E] mb-2">Desa Bulurejo</p>
-              <p className="font-sans text-sm text-[#26332E] mb-2">Kecamatan Tempursari</p>
-              <p className="font-sans text-sm text-[#26332E] mb-4">Kabupaten Lumajang, Jawa Timur 67375</p>
+              <p className="font-sans text-sm text-[#26332E] mb-2">Karangmenjangan Hamlet</p>
+              <p className="font-sans text-sm text-[#26332E] mb-2">Bulurejo Village</p>
+              <p className="font-sans text-sm text-[#26332E] mb-2">Tempursari District</p>
+              <p className="font-sans text-sm text-[#26332E] mb-4">Lumajang Regency, East Java 67375</p>
               <div className="border-t border-gray-200 pt-4 mt-4">
                 <p className="font-sans text-xs text-[#26332E]/60">
-                  ~56 km arah selatan dari Pusat Kabupaten Lumajang (tempuh ~1,5 jam)
+                  ~56 km south of the Lumajang Regency center (approx. 1.5 hours by road)
                 </p>
                 <p className="font-sans text-xs text-[#26332E]/60 mt-2">
-                  ~5,5 km arah selatan dari Kecamatan Tempursari (tempuh ~10 menit)
+                  ~5.5 km south of Tempursari District (approx. 10 minutes by road)
                 </p>
               </div>
             </div>
           </div>
-          <div className="order-1 md:order-2 w-full h-80 md:h-96 bg-[#184352]/10 rounded-2xl overflow-hidden flex items-center justify-center shadow-md">
-            <div className="text-center">
-              <iframe
-                src='https://www.google.com.gg/maps?q=Karangmenjangan+Bulurejo+Tempursari&output=embed'
-                className="w-full h-80 md:h-96"
-                title="Karangmenjangan Location"
-                loading="lazy"
-                sandbox="">
-              </iframe>
-            </div>
+          <div className="order-1 md:order-2 w-full h-80 md:h-96 bg-[#184352]/10 rounded-2xl overflow-hidden shadow-md relative">
+            <iframe
+              src='https://www.google.com/maps?q=Karangmenjangan+Bulurejo+Tempursari+Lumajang&output=embed'
+              className="w-full h-full"
+              title="Karangmenjangan Location"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Karangmenjangan+Bulurejo+Tempursari+Lumajang"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-4 right-4 inline-flex items-center gap-2 bg-[#184332] text-white font-sans text-sm font-semibold px-4 py-2 rounded-full shadow-lg hover:bg-[#BC6C25] transition-colors"
+            >
+              <MapPin className="w-4 h-4" /> Open in Google Maps
+            </a>
           </div>
         </div>
       </section>
@@ -427,10 +447,10 @@ export default function Home() {
               to="/packages"
               className="bg-white text-[#184332] font-sans font-semibold px-8 py-4 rounded-full inline-flex items-center gap-2 hover:bg-white/90 transition-colors"
             >
-              Lihat Paket Wisata
+              View Tour Packages
             </Link>
             <a
-              href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20wisata%20Karangmenjangan"
+              href="https://wa.me/6281234567890?text=Hello,%20I%20am%20interested%20in%20the%20Karangmenjangan%20tourism"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white/50 hover:bg-white/10 text-white font-sans font-medium px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"

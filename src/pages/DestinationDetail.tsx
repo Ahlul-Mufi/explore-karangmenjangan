@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, MapPin, Check } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
+import PhotoSlider from '../components/PhotoSlider'
 import { getDestinationBySlug } from '../data/destinations'
 
 export default function DestinationDetail() {
@@ -17,15 +18,29 @@ export default function DestinationDetail() {
     )
   }
 
+  const galleryPhotos = dest.gallery.map((src, i) => ({
+    id: `${dest.slug}-gallery-${i}`,
+    src,
+    alt: `${dest.title} - ${i + 1}`,
+    category: dest.category,
+  }))
+
   return (
     <div className="pt-24 pb-16">
       {/* Hero */}
-      <div className="h-64 md:h-96 bg-gradient-to-br from-[#184332]/30 to-[#FEFAE0] flex items-center justify-center">
-        <div className="text-center text-[#184332]">
-          <span className="inline-block px-3 py-1 bg-[#BC6C25]/20 text-[#BC6C25] rounded-full text-xs font-sans font-semibold mb-4">
-            {dest.category}
-          </span>
-          <h1 className="text-4xl md:text-5xl font-sans font-bold">{dest.title}</h1>
+      <div className="h-64 md:h-96 relative overflow-hidden">
+        <img
+          src={dest.image}
+          alt={dest.title}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+          <div className="text-center text-white px-4">
+            <span className="inline-block px-3 py-1 bg-[#BC6C25]/80 text-white rounded-full text-xs font-sans font-semibold mb-4">
+              {dest.category}
+            </span>
+            <h1 className="text-4xl md:text-5xl font-sans font-bold">{dest.title}</h1>
+          </div>
         </div>
       </div>
       <div className="px-4">
@@ -76,20 +91,11 @@ export default function DestinationDetail() {
 
           <div className="border-t border-gray-200 pt-8 mb-8">
             <h3 className="text-xl font-sans font-bold text-[#184332] mb-4">Galeri</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {dest.gallery.map((_g, i) => (
-                <div
-                  key={i}
-                  className="aspect-square bg-gradient-to-br from-[#184332]/15 to-[#FEFAE0] rounded-xl flex items-center justify-center text-xs text-[#184332]/30 font-sans"
-                >
-                  {dest.title} - {i + 1}
-                </div>
-              ))}
-            </div>
+            <PhotoSlider photos={galleryPhotos} />
           </div>
 
           <div className="border-t border-gray-200 pt-8 mb-8">
-            <h3 className="text-xl font-sans font-bold text-[#184332] mb-4">Lokasi Google Maps</h3>
+            <h3 className="text-xl font-sans font-bold text-[#184332] mb-4">Google Maps Location</h3>
             <div className="w-full h-64 bg-[#184332]/10 rounded-xl flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-8 h-8 text-[#BC6C25] mx-auto mb-2" />

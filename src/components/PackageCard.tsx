@@ -48,13 +48,13 @@ export default function PackageCard({ pkg, index = 0 }: PackageCardProps) {
               <Clock className="w-3.5 h-3.5" /> {pkg.duration}
             </span>
             <span className="flex items-center gap-1">
-              <Users className="w-3.5 h-3.5" /> {pkg.minPerson}-{pkg.maxPerson} orang
+              <Users className="w-3.5 h-3.5" /> {pkg.minPerson}-{pkg.maxPerson} people
             </span>
           </div>
           <div className="flex items-center justify-between border-t border-gray-100 pt-4">
             <div>
               <span className="flex items-center gap-1 text-xs text-[#26332E]/50 font-sans">
-                <Tag className="w-3 h-3" /> Mulai dari
+                <Tag className="w-3 h-3" /> Starting from
               </span>
               <p className="font-sans text-lg font-bold text-[#BC6C25]">
                 {formatPrice(pkg.price)}
@@ -62,7 +62,7 @@ export default function PackageCard({ pkg, index = 0 }: PackageCardProps) {
               <p className="font-sans text-[10px] text-[#26332E]/50">{pkg.priceNote}</p>
             </div>
             <span className="flex items-center gap-1 text-sm font-sans font-medium text-[#184332] group-hover:text-[#BC6C25] transition-colors">
-              Lihat Detail <ArrowRight className="w-4 h-4" />
+              View Details <ArrowRight className="w-4 h-4" />
             </span>
           </div>
         </div>
