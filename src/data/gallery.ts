@@ -18,6 +18,25 @@ import img8816 from '../assets/IMG_8816.JPG.jpeg'
 import img8821 from '../assets/IMG_8821.JPG.jpeg'
 import img8825 from '../assets/IMG_8825.JPG.jpeg'
 import img8851 from '../assets/IMG_8851.JPG.jpeg'
+import img7455 from '../assets/IMG_7455.JPG.jpeg'
+import img7863 from '../assets/IMG_7863.JPG.jpeg'
+import img8839 from '../assets/IMG_8839.JPG.jpeg'
+import img7753 from '../assets/IMG_7753.JPG.jpeg'
+import img8430 from '../assets/IMG_8430.JPG.jpeg'
+import ikanAsin from '../assets/ikan asin.jpeg'
+import galeriNature1 from '../assets/galeri nature 1.jpeg'
+import galeriNature2 from '../assets/galeri nature 2.jpeg'
+import galerNature3 from '../assets/galer nature 3.jpeg'
+import galerNature4 from '../assets/galer nature 4.jpeg'
+import localProduct1 from '../assets/local product 1.jpeg'
+import localProduct2 from '../assets/local product 2.jpeg'
+import localProduct3 from '../assets/local product 3.jpeg'
+import localProduct4 from '../assets/local product 4.jpeg'
+import localProduct5 from '../assets/local product 5.jpeg'
+import localProduct6 from '../assets/local product 6.jpeg'
+import culture1 from '../assets/culture 1.jpeg'
+import kuliner1 from '../assets/kuliner 1.jpeg'
+import kuliner2 from '../assets/kuliner 2.jpeg'
 
 export const galleryItems: GalleryItem[] = [
   // Pantai Watu Godheg
@@ -44,4 +63,29 @@ export const galleryItems: GalleryItem[] = [
   { id: '17', src: img8851, alt: 'Muara Karangmenjangan', category: 'Nature' },
   { id: '18', src: img8816, alt: 'Muara Karangmenjangan', category: 'Nature' },
   { id: '19', src: img8821, alt: 'Muara Karangmenjangan', category: 'Nature' },
+  // Culture
+  { id: '20', src: img7455, alt: 'Religious Diversity & Belief', category: 'Culture' },
+  { id: '21', src: img7863, alt: 'Larung Sesaji', category: 'Culture' },
+  { id: '22', src: img8839, alt: 'Life of the Fishermen', category: 'Culture' },
+  // Culinary & Local Product
+  { id: '23', src: img8430, alt: 'Smoked Fish Products', category: 'Culinary' },
+  { id: '24', src: ikanAsin, alt: 'Karangmenjangan Salted Fish', category: 'Culinary' },
+  { id: '25', src: img7753, alt: 'Coconut Products', category: 'Local Product' },
+  // Nature Gallery
+  { id: '26', src: galeriNature1, alt: 'Karangmenjangan Nature', category: 'Nature' },
+  { id: '27', src: galeriNature2, alt: 'Karangmenjangan Nature', category: 'Nature' },
+  { id: '28', src: galerNature3, alt: 'Karangmenjangan Nature', category: 'Nature' },
+  { id: '29', src: galerNature4, alt: 'Karangmenjangan Nature', category: 'Nature' },
+  // Local Product
+  { id: '30', src: localProduct1, alt: 'Coconut Brown Sugar', category: 'Local Product' },
+  { id: '31', src: localProduct2, alt: 'Peanuts', category: 'Local Product' },
+  { id: '32', src: localProduct3, alt: 'Cassava', category: 'Local Product' },
+  { id: '33', src: localProduct4, alt: 'Coconut Brown Sugar', category: 'Local Product' },
+  { id: '34', src: localProduct5, alt: 'Copra', category: 'Local Product' },
+  { id: '35', src: localProduct6, alt: 'Young Coconut', category: 'Local Product' },
+  // Culture
+  { id: '36', src: culture1, alt: 'Karangmenjangan Culture', category: 'Culture' },
+  // Culinary
+  { id: '37', src: kuliner1, alt: 'Fresh Fish', category: 'Culinary' },
+  { id: '38', src: kuliner2, alt: 'Signature Sambal', category: 'Culinary' },
 ]

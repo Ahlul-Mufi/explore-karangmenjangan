@@ -10,6 +10,7 @@ export interface Destination {
   gallery: string[]
   facilities: string[]
   mapsUrl?: string
+  coordinates: { lat: number; lng: number }
 }
 
 export interface CultureItem {
@@ -54,5 +55,6 @@ export interface Package {
   includes: string[]
   excludes: string[]
   image: string
+  images?: string[]
   whatsapp: string
 }

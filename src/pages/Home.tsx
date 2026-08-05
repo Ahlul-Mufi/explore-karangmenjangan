@@ -13,6 +13,9 @@ import { galleryItems } from '../data/gallery'
 import { packages } from '../data/packages'
 import PackageCard from '../components/PackageCard'
 import TestimonialCarousel from '../components/TestimonialCarousel'
+import maskot from '../assets/maskot-crop.png'
+import maskot2 from '../assets/maskot-crop-2.png'
+import maskot3 from '../assets/maskot-crop-3.png'
 import heroImg from '../assets/CETAK (2).png'
 import cetakImg from '../assets/CETAK.png'
 import viewImg from '../assets/view.jpg.jpeg'
@@ -205,11 +208,10 @@ export default function Home() {
                 Immerse yourself<br />in nature
               </h2>
               <p className="font-sans text-lg md:text-xl text-[#26332E]/80 mb-6 leading-relaxed">
-                From the gentle rustle of cashew nut leaves to the roar of southern waves against the rocks.
+                From the gentle rustle of coconut leaves to the roar of southern waves against the rocks.
               </p>
               <p className="font-sans text-sm md:text-base text-[#26332E]/60 mb-8 leading-relaxed">
-                The hills are covered by cashew trees, their fruits falling silently to the ground. Cassava and corn grow on the slopes shaded by mango and durian trees. Darkness reveals fireflies along the riverbanks.  
-                This is life at Karangmenjangan.
+                Expanses of rice fields stretch across parts of the village. The cool countryside air, and the rocky landscapes that shape the hills. Banana trees line the plantations on both sides of the road, along with coconut palms as the main commodity. Beaches and rivers at the edges of the area bring the soothing rustle of waves and breeze. The exotic crash of southern ocean waves captivates the eye.
               </p>
               <Button to="/about" variant="outline">
                 Learn more
@@ -249,9 +251,35 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-white rounded-2xl p-8 shadow-sm border border-[#184332]/5"
               >
-                <div className="w-16 h-16 bg-[#BC6C25]/10 rounded-full flex items-center justify-center mb-6">
-                  <span className="text-2xl">{i === 0 ? '🙏' : i === 1 ? '⛵' : '🪷'}</span>
-                </div>
+                {i === 0 ? (
+                  <div className="flex items-center justify-center mb-6">
+                    <img
+                      src={maskot}
+                      alt="Larung Sesaji"
+                      className="w-[120px] h-[120px] object-contain"
+                    />
+                  </div>
+                ) : i === 1 ? (
+                  <div className="flex items-center justify-center mb-6">
+                    <img
+                      src={maskot3}
+                      alt="Life of the Fishermen"
+                      className="w-[120px] h-[120px] object-contain"
+                    />
+                  </div>
+                ) : i === 2 ? (
+                  <div className="flex items-center justify-center mb-6">
+                    <img
+                      src={maskot2}
+                      alt="Religious Diversity & Belief"
+                      className="w-[120px] h-[120px] object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 bg-[#BC6C25]/10 rounded-full flex items-center justify-center mb-6">
+                    <span className="text-2xl">⛵</span>
+                  </div>
+                )}
                 <h3 className="font-sans text-xl font-semibold text-[#184332] mb-2">{item.title}</h3>
                 <p className="font-sans text-sm text-[#26332E]/50 mb-3">{item.subtitle}</p>
                 <p className="font-sans text-sm text-[#26332E]/70 leading-relaxed">{item.description}</p>
@@ -416,7 +444,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-4 bg-[#184332] text-white text-center">
+      <section className="pt-16 md:pt-24 pb-10 md:pb-24 px-4 bg-[#184332] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -450,7 +478,7 @@ export default function Home() {
               View Tour Packages
             </Link>
             <a
-              href="https://wa.me/6281234567890?text=Hello,%20I%20am%20interested%20in%20the%20Karangmenjangan%20tourism"
+              href="https://api.whatsapp.com/send?phone=6285234791369&text=Hello%2C%20I%20am%20interested%20in%20the%20Karangmenjangan%20tourism"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white/50 hover:bg-white/10 text-white font-sans font-medium px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"

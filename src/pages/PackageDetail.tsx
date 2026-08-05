@@ -24,18 +24,20 @@ export default function PackageDetail() {
     )
   }
 
-  const waUrl = `https://wa.me/${pkg.whatsapp}?text=${encodeURIComponent(`Hello, I am interested in the "${pkg.name}" package. Please provide more information.`)}`
+  const waUrl = `https://api.whatsapp.com/send?phone=${pkg.whatsapp}&text=${encodeURIComponent(`Hello, I am interested in the "${pkg.name}" package. Please provide more information.`)}`
 
   return (
-    <div className="pt-24 pb-16">
+    <div className="pb-16">
       {/* Hero */}
-      <div className="h-64 md:h-80 bg-gradient-to-br from-[#184332]/30 to-[#FEFAE0] flex items-center justify-center relative">
-        <div className="text-center text-[#184332]">
-          <span className="inline-block px-3 py-1 bg-[#BC6C25]/20 text-[#BC6C25] rounded-full text-xs font-sans font-semibold mb-4">
-            {pkg.category}
-          </span>
-          <h1 className="text-3xl md:text-5xl font-sans font-bold mb-3">{pkg.name}</h1>
-          <p className="text-lg font-sans text-[#26332E]/70 max-w-xl mx-auto px-4">{pkg.tagline}</p>
+      <div className="pt-24 bg-[#184332]">
+        <div className="h-64 md:h-80 bg-[#184332] flex items-center justify-center relative">
+          <div className="text-center text-white">
+            <span className="inline-block px-3 py-1 bg-[#BC6C25]/80 text-white rounded-full text-xs font-sans font-semibold mb-4">
+              {pkg.category}
+            </span>
+            <h1 className="text-3xl md:text-5xl font-sans font-bold mb-3">{pkg.name}</h1>
+            <p className="text-lg font-sans text-white/80 max-w-xl mx-auto px-4">{pkg.tagline}</p>
+          </div>
         </div>
       </div>
 

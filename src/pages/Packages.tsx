@@ -45,7 +45,7 @@ export default function Packages() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            href="https://wa.me/6281234567890?text=Hello,%20I%20would%20like%20to%20ask%20about%20the%20Karangmenjangan%20tour%20packages"
+            href="https://api.whatsapp.com/send?phone=6285234791369&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20the%20Karangmenjangan%20tour%20packages"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-full font-sans font-semibold transition-colors"

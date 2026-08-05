@@ -9,7 +9,6 @@ import PackageDetail from '../pages/PackageDetail'
 import Culture from '../pages/Culture'
 import Umkm from '../pages/Umkm'
 import GalleryPage from '../pages/GalleryPage'
-import Contact from '../pages/Contact'
 
 export default function AppRoutes() {
   return (
@@ -24,7 +23,6 @@ export default function AppRoutes() {
         <Route path="/culture" element={<Culture />} />
         <Route path="/umkm" element={<Umkm />} />
         <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>
   )

@@ -3,16 +3,16 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "Karangmenjangan is a hidden paradise. The nature and the warmth of the people are unforgettable.",
-    author: "Travel Bloggers Indonesia",
+    quote: "Bulurejo Village is a hidden gem with extraordinary natural potential. The beauty and richness of its natural resources are a great asset for continued development, enabling progress and improving the economic welfare of the community in the future.",
+    author: "KKN BBK 8 Bulurejo II Group",
   },
   {
-    quote: "Sunset at Watu Godeg is the best I've ever witnessed. A true hidden gem.",
-    author: "Nomadic Footprints",
+    quote: "Arriving at Karangmenjangan during the golden full moon, a glimpse of God's beauty that will always be longed for.",
+    author: "Ola Djuhartono",
   },
   {
-    quote: "Susur sungai di malam hari dengan kunang-kunang adalah pengalaman yang ajaib.",
-    author: "Jelajah Alam by Irene"
+    quote: "Don't forget to camp at the TPI reforestation area.",
+    author: "Regu Tulip",
   },
 ];
 

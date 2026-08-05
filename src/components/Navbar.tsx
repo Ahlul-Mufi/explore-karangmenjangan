@@ -11,7 +11,6 @@ const navLinks = [
   { label: 'Culture', to: '/culture' },
   { label: 'UMKM', to: '/umkm' },
   { label: 'Gallery', to: '/gallery' },
-  { label: 'Contact', to: '/contact' },
 ]
 
 export default function Navbar() {

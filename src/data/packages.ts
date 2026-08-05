@@ -1,4 +1,16 @@
 import type { Package } from '../types'
+import adventure1 from '../assets/adventure 1.jpeg'
+import adventure2 from '../assets/Adventure 2.jpeg'
+import adventure3 from '../assets/Adventure 3.jpeg'
+import fulday1 from '../assets/fulday 1.jpeg'
+import fulday2 from '../assets/fulday 2.jpeg'
+import fulday4 from '../assets/fulday 4.jpeg'
+import kuliner1 from '../assets/kuliner 1.jpeg'
+import kuliner2 from '../assets/kuliner 2.jpeg'
+import kuliner3 from '../assets/kuliner 3.jpeg'
+import familyFun1 from '../assets/family fun.jpeg'
+import familyFun2 from '../assets/family fun 2.jpeg'
+import familyFun3 from '../assets/family fun 3.jpeg'
 
 export const packages: Package[] = [
   {
@@ -35,7 +47,8 @@ export const packages: Package[] = [
     includes: ['Lunch', 'Snacks & mineral water', 'Local guide', 'Local transportation'],
     excludes: ['Transportation from outside the city', 'Meals other than those listed', 'Travel insurance', 'Guide gratuities'],
     image: '/images/paket-fullday.jpg',
-    whatsapp: '6281234567890',
+    images: [fulday1, fulday2, fulday4],
+    whatsapp: '6285234791369',
   },
   {
     id: '2',
@@ -53,7 +66,6 @@ export const packages: Package[] = [
       'Exploring the river on a traditional boat',
       'Trekking along the riverbanks',
       'Exploring the estuary and coastal area',
-      'Snorkeling in the coral reef area (condition permitting)',
       'Bonfire and fishermen\'s stories at night',
     ],
     itinerary: [
@@ -63,7 +75,6 @@ export const packages: Package[] = [
       { time: '10:30', activity: 'Trekking along the riverbanks' },
       { time: '12:00', activity: 'Lunch by the estuary' },
       { time: '13:00', activity: 'Exploring the estuary and coastal area' },
-      { time: '15:00', activity: 'Snorkeling (condition permitting)' },
       { time: '17:00', activity: 'Bonfire and fishermen\'s stories' },
       { time: '18:30', activity: 'Return journey' },
     ],
@@ -71,7 +82,8 @@ export const packages: Package[] = [
     includes: ['Lunch', 'Snorkeling gear', 'Local guide', 'Safety equipment'],
     excludes: ['Transportation from outside the city', 'Meals other than those listed', 'Travel insurance', 'Guide gratuities'],
     image: '/images/paket-adventure.jpg',
-    whatsapp: '6281234567890',
+    images: [adventure1, adventure2, adventure3],
+    whatsapp: '6285234791369',
   },
   {
     id: '3',
@@ -88,7 +100,6 @@ export const packages: Package[] = [
     highlights: [
       'Visit to the TPI during the morning fish auction',
       'Buying fresh fish directly from the fishermen',
-      'Cooking class preparing fish with local residents',
       'Eating together on the beach',
       'Taking home processed fish as souvenirs',
     ],
@@ -103,42 +114,8 @@ export const packages: Package[] = [
     includes: ['Cooking ingredients', 'Cooking class', 'Lunch', 'Processed fish souvenirs'],
     excludes: ['Transportation', 'Meals outside the schedule', 'Tips'],
     image: '/images/paket-kuliner.jpg',
-    whatsapp: '6281234567890',
-  },
-  {
-    id: '4',
-    slug: 'paket-budaya-karangmenjangan',
-    name: 'Culture & Local Wisdom',
-    tagline: 'Delve into the traditions and wisdom of Karangmenjangan\'s coastal community',
-    category: 'Culture',
-    duration: '1 day (7-9 hours)',
-    price: 225000,
-    priceNote: 'per person (min. 5 people)',
-    minPerson: 5,
-    maxPerson: 20,
-    description: 'A cultural tour package that lets you get to know the traditions and local wisdom of the Karangmenjangan community more deeply. Witness the Larung Sesaji ritual, learn about the fishermen\'s way of life, and experience firsthand the religious harmony preserved in this hamlet.',
-    highlights: [
-      'Visit to cultural sites and the temple (pura)',
-      'Meeting with traditional elders and historical stories',
-      'Learning to make traditional offerings',
-      'Observing the traditional fishermen\'s life',
-      'Witnessing the Larung Sesaji ritual (if it coincides)',
-    ],
-    itinerary: [
-      { time: '07:00', activity: 'Pickup at the meeting point' },
-      { time: '08:00', activity: 'Visit to cultural sites and the temple' },
-      { time: '09:30', activity: 'Meeting with traditional elders' },
-      { time: '11:00', activity: 'Workshop on making traditional offerings' },
-      { time: '12:00', activity: 'Lunch with local residents' },
-      { time: '13:30', activity: 'Observing the traditional fishermen\'s life' },
-      { time: '15:00', activity: 'Afternoon walk along the coast' },
-      { time: '17:00', activity: 'Return journey' },
-    ],
-    facilities: ['Cultural guide', 'Entry tickets', 'Mineral water'],
-    includes: ['Lunch', 'Workshop materials', 'Local guide', 'Historical stories'],
-    excludes: ['Transportation from outside the city', 'Meals other than those listed', 'Travel insurance', 'Tips'],
-    image: '/images/paket-budaya.jpg',
-    whatsapp: '6281234567890',
+    images: [kuliner1, kuliner2, kuliner3],
+    whatsapp: '6285234791369',
   },
   {
     id: '5',
@@ -154,7 +131,6 @@ export const packages: Package[] = [
     description: 'A family-friendly tour package designed for all ages. Light and fun activities such as playing on the beach, shopping at local UMKM, and enjoying local cuisine. Children will learn while playing in the great outdoors.',
     highlights: [
       'Playing in the sand and water at Pantai Watu Godeg',
-      'Dragon fruit orchard tour and fruit picking',
       'Shopping for local UMKM souvenirs',
       'Lunch at a seaside eatery',
       'Family photo session on the beach',
@@ -173,7 +149,8 @@ export const packages: Package[] = [
     includes: ['Lunch', 'Snacks', 'Local guide', 'Fruit orchard tour'],
     excludes: ['Transportation from outside the city', 'Meals other than those listed', 'Travel insurance', 'Tips'],
     image: '/images/paket-keluarga.jpg',
-    whatsapp: '6281234567890',
+    images: [familyFun1, familyFun2, familyFun3],
+    whatsapp: '6285234791369',
   },
 ]
 

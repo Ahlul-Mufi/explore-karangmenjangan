@@ -38,6 +38,7 @@ The beach can be reached from the center of Bulurejo Village by two-wheeled or f
     facilities: ["Parking area", "Food stalls"],
     mapsUrl:
       "https://www.google.com/maps/search/Pantai+Watu+Godeg+Karangmenjangan",
+    coordinates: { lat: -8.317481, lng: 112.995744 },
   },
   {
     id: "2",
@@ -55,6 +56,7 @@ This activity is perfect for nature lovers who want to enjoy the tranquility and
     gallery: [img7643, susurSungai, img7642, img7874],
     facilities: ["Local guide"],
     mapsUrl: "https://www.google.com/maps/search/Susur+Sungai+Karangmenjangan",
+    coordinates: { lat: -8.329344, lng: 112.965869 },
   },
   {
     id: "3",
@@ -74,6 +76,7 @@ The nickname "TPI Beach" comes from the Fish Auction Center (Tempat Pelelangan I
     gallery: [tpiImg, tpiWa, img8305, img8321],
     facilities: ["Parking area", "Auction hall"],
     mapsUrl: "https://www.google.com/maps/search/TPI+Karangmenjangan",
+    coordinates: { lat: -8.330712, lng: 112.966619 },
   },
   {
     id: "4",
@@ -91,6 +94,7 @@ The estuary scenery is stunning, especially in the late afternoon as the sun set
     gallery: [img8825, img8851, img8816, img8821],
     facilities: ["Parking area"],
     mapsUrl: "https://www.google.com/maps/search/Muara+Karangmenjangan",
+    coordinates: { lat: -8.327837, lng: 112.971119 },
   },
 ];
 

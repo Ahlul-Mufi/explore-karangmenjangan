@@ -8,6 +8,7 @@ interface PhotoSliderProps {
   autoplay?: boolean
   interval?: number
   className?: string
+  imageClassName?: string
 }
 
 export default function PhotoSlider({
@@ -15,6 +16,7 @@ export default function PhotoSlider({
   autoplay = true,
   interval = 4000,
   className = '',
+  imageClassName = 'w-full h-full object-cover',
 }: PhotoSliderProps) {
   const [index, setIndex] = useState(0)
 
@@ -41,7 +43,7 @@ export default function PhotoSlider({
       >
         {photos.map((p) => (
           <div key={p.id} className="min-w-full w-full h-full flex-shrink-0">
-            <img src={p.src} alt={p.alt} className="w-full h-full object-cover" />
+            <img src={p.src} alt={p.alt} className={imageClassName} />
           </div>
         ))}
       </motion.div>
@@ -50,7 +52,10 @@ export default function PhotoSlider({
         <>
           <button
             type="button"
-            onClick={prev}
+            onClick={(e) => {
+              e.stopPropagation()
+              prev()
+            }}
             aria-label="Previous photo"
             className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#184332] flex items-center justify-center shadow transition-colors"
           >
@@ -58,7 +63,10 @@ export default function PhotoSlider({
           </button>
           <button
             type="button"
-            onClick={next}
+            onClick={(e) => {
+              e.stopPropagation()
+              next()
+            }}
             aria-label="Next photo"
             className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-[#184332] flex items-center justify-center shadow transition-colors"
           >
@@ -69,7 +77,10 @@ export default function PhotoSlider({
               <button
                 key={p.id}
                 type="button"
-                onClick={() => setIndex(i)}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setIndex(i)
+                }}
                 aria-label={`Go to slide ${i + 1}`}
                 className={`h-2 rounded-full transition-all ${
                   i === index ? 'w-6 bg-white' : 'w-2 bg-white/60 hover:bg-white/90'

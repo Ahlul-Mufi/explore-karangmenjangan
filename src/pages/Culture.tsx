@@ -21,8 +21,13 @@ export default function Culture() {
               className={`flex flex-col md:flex-row gap-8 md:gap-12 items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
             >
               <div className="md:w-1/2">
-                <div className="aspect-[4/3] bg-gradient-to-br from-[#184332]/10 to-[#FEFAE0] rounded-2xl flex items-center justify-center shadow-md">
-                  <span className="text-[#184332]/30 font-sans text-lg">{item.title}</span>
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
               </div>
               <div className="md:w-1/2">

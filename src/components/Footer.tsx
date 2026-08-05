@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Compass, Mail, MapPin } from 'lucide-react'
+import { Compass, Mail, MapPin, MessageCircle, Camera, Music2, Video } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -9,7 +9,6 @@ const navLinks = [
   { label: 'Culture', to: '/culture' },
   { label: 'UMKM', to: '/umkm' },
   { label: 'Gallery', to: '/gallery' },
-  { label: 'Contact', to: '/contact' },
 ]
 
 export default function Footer() {
@@ -31,7 +30,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-sans text-lg font-semibold mb-4">Navigation</h4>
-            <div className="flex flex-col gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2 md:gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -57,8 +56,48 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-white/50 shrink-0" />
-                <a href="mailto:desabulurejo056@gmail.com" className="font-sans text-sm text-white/70 hover:text-white transition-colors">
-                  desabulurejo056@gmail.com
+                <a href="mailto:dusunkarangmenjangan@gmail.com" className="font-sans text-sm text-white/70 hover:text-white transition-colors">
+                  dusunkarangmenjangan@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <MessageCircle className="w-4 h-4 text-white/50 shrink-0" />
+                <a
+                  href="https://api.whatsapp.com/send?phone=6285234791369&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20Karangmenjangan%20tourism"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  +62 852-3479-1369 (Kholis)
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <MessageCircle className="w-4 h-4 text-white/50 shrink-0" />
+                <a
+                  href="https://api.whatsapp.com/send?phone=6287792097651"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-sm text-white/70 hover:text-white transition-colors"
+                >
+                  +62 877-9209-7651 (Aris)
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Camera className="w-4 h-4 text-white/50 shrink-0" />
+                <a href="https://www.instagram.com/explore.kawika" target="_blank" rel="noopener noreferrer" className="font-sans text-sm text-white/70 hover:text-white transition-colors">
+                  instagram.com/explore.kawika
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Music2 className="w-4 h-4 text-white/50 shrink-0" />
+                <a href="https://www.tiktok.com/@explore.kawika" target="_blank" rel="noopener noreferrer" className="font-sans text-sm text-white/70 hover:text-white transition-colors">
+                  tiktok.com/@explore.kawika
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Video className="w-4 h-4 text-white/50 shrink-0" />
+                <a href="https://www.youtube.com/@kampungwisatakarangmenjangan" target="_blank" rel="noopener noreferrer" className="font-sans text-sm text-white/70 hover:text-white transition-colors">
+                  youtube.com/@kampungwisatakarangmenjangan
                 </a>
               </div>
             </div>

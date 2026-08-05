@@ -25,6 +25,10 @@ export default function DestinationDetail() {
     category: dest.category,
   }))
 
+  const { lat, lng } = dest.coordinates
+  const mapEmbedUrl = `https://www.google.com/maps?q=${lat},${lng}&z=16&output=embed`
+  const mapsAppUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`
+
   return (
     <div className="pt-24 pb-16">
       {/* Hero */}
@@ -96,19 +100,23 @@ export default function DestinationDetail() {
 
           <div className="border-t border-gray-200 pt-8 mb-8">
             <h3 className="text-xl font-sans font-bold text-[#184332] mb-4">Google Maps Location</h3>
-            <div className="w-full h-64 bg-[#184332]/10 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-8 h-8 text-[#BC6C25] mx-auto mb-2" />
-                <p className="font-sans text-[#26332E]/60 mb-2">View on Google Maps</p>
-                <a
-                  href={dest.mapsUrl || '#'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#0077B6] underline font-sans text-sm"
-                >
-                  Open in Google Maps
-                </a>
-              </div>
+            <div className="w-full h-64 rounded-xl overflow-hidden shadow-md relative">
+              <iframe
+                src={mapEmbedUrl}
+                className="w-full h-full"
+                title={`${dest.title} - Google Maps`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+              <a
+                href={mapsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 inline-flex items-center gap-2 bg-[#184332] text-white font-sans text-sm font-semibold px-4 py-2 rounded-full shadow-lg hover:bg-[#BC6C25] transition-colors"
+              >
+                <MapPin className="w-4 h-4" /> Open in Google Maps
+              </a>
             </div>
           </div>
         </motion.div>

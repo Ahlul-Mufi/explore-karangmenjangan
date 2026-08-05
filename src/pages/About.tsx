@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading'
+import aboutImg from '../assets/About.jpeg'
 
 export default function About() {
   return (
@@ -9,6 +10,19 @@ export default function About() {
           title="About Karangmenjangan"
           subtitle="History, culture, and the soul of a south coast village"
         />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <img
+            src={aboutImg}
+            alt="Karangmenjangan"
+            className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-md"
+          />
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

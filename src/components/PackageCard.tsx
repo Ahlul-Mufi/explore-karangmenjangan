@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Clock, Users, ArrowRight, Tag } from 'lucide-react'
 import type { Package } from '../types'
+import PhotoSlider from './PhotoSlider'
 
 interface PackageCardProps {
   pkg: Package
@@ -29,10 +30,22 @@ export default function PackageCard({ pkg, index = 0 }: PackageCardProps) {
         className="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
       >
         <div className="aspect-[16/10] bg-gradient-to-br from-[#184332]/20 to-[#FEFAE0] overflow-hidden relative">
-          <div className="w-full h-full flex items-center justify-center text-[#184332]/30 font-sans text-lg">
-            {pkg.name}
-          </div>
-          <span className="absolute top-3 left-3 px-3 py-1 bg-[#BC6C25] text-white text-xs font-sans font-semibold rounded-full">
+          {pkg.images && pkg.images.length > 0 ? (
+            <PhotoSlider
+              photos={pkg.images.map((src, i) => ({
+                id: `${pkg.slug}-card-${i}`,
+                src,
+                alt: `${pkg.name} - ${i + 1}`,
+                category: pkg.category,
+              }))}
+              className="!aspect-[16/10] !rounded-none !shadow-none"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-[#184332]/30 font-sans text-lg">
+              {pkg.name}
+            </div>
+          )}
+          <span className="absolute top-3 left-3 px-3 py-1 bg-[#BC6C25] text-white text-xs font-sans font-semibold rounded-full z-10">
             {pkg.category}
           </span>
         </div>
