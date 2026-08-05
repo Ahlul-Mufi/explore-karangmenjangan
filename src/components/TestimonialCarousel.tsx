@@ -4,7 +4,7 @@ import { Quote } from 'lucide-react';
 const testimonials = [
   {
     quote: "Bulurejo Village is a hidden gem with extraordinary natural potential. The beauty and richness of its natural resources are a great asset for continued development, enabling progress and improving the economic welfare of the community in the future.",
-    author: "KKN BBK 8 Bulurejo II Group",
+    author: "KKN-BBK 8 Bulurejo II",
   },
   {
     quote: "Arriving at Karangmenjangan during the golden full moon, a glimpse of God's beauty that will always be longed for.",
