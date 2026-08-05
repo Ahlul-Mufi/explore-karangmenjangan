@@ -38,54 +38,56 @@ import culture1 from '../assets/culture 1.jpeg'
 import kuliner1 from '../assets/kuliner 1.jpeg'
 import kuliner2 from '../assets/kuliner 2.jpeg'
 
+const alt = (id: string, en: string) => ({ id, en })
+
 export const galleryItems: GalleryItem[] = [
   // Pantai Watu Godheg
-  { id: '1', src: view, alt: 'Pantai Watu Godheg', category: 'Beach' },
-  { id: '2', src: watuGodeg, alt: 'Pantai Watu Godheg', category: 'Beach' },
-  { id: '3', src: wa1, alt: 'Pantai Watu Godheg', category: 'Beach' },
-  { id: '4', src: img7548, alt: 'Pantai Watu Godheg', category: 'Beach' },
-  { id: '5', src: img7573, alt: 'Pantai Watu Godheg', category: 'Beach' },
-  { id: '6', src: img7583, alt: 'Pantai Watu Godheg', category: 'Beach' },
+  { id: '1', src: view, alt: alt('Pantai Watu Godheg', 'Pantai Watu Godheg'), category: 'Beach' },
+  { id: '2', src: watuGodeg, alt: alt('Pantai Watu Godheg', 'Pantai Watu Godheg'), category: 'Beach' },
+  { id: '3', src: wa1, alt: alt('Pantai Watu Godheg', 'Pantai Watu Godheg'), category: 'Beach' },
+  { id: '4', src: img7548, alt: alt('Pantai Watu Godheg', 'Pantai Watu Godheg'), category: 'Beach' },
+  { id: '5', src: img7573, alt: alt('Pantai Watu Godheg', 'Pantai Watu Godheg'), category: 'Beach' },
+  { id: '6', src: img7583, alt: alt('Pantai Watu Godheg', 'Pantai Watu Godheg'), category: 'Beach' },
   // Susur Sungai Karangmenjangan
-  { id: '7', src: img7642, alt: 'Susur Sungai Karangmenjangan', category: 'Nature' },
-  { id: '8', src: img7643, alt: 'Susur Sungai Karangmenjangan', category: 'Nature' },
-  { id: '9', src: img7874, alt: 'Susur Sungai Karangmenjangan', category: 'Nature' },
-  { id: '10', src: susurSungai, alt: 'Susur Sungai Karangmenjangan', category: 'Nature' },
+  { id: '7', src: img7642, alt: alt('Susur Sungai Karangmenjangan', 'Susur Sungai Karangmenjangan'), category: 'Nature' },
+  { id: '8', src: img7643, alt: alt('Susur Sungai Karangmenjangan', 'Susur Sungai Karangmenjangan'), category: 'Nature' },
+  { id: '9', src: img7874, alt: alt('Susur Sungai Karangmenjangan', 'Susur Sungai Karangmenjangan'), category: 'Nature' },
+  { id: '10', src: susurSungai, alt: alt('Susur Sungai Karangmenjangan', 'Susur Sungai Karangmenjangan'), category: 'Nature' },
   // Pantai TPI Karangmenjangan
-  { id: '11', src: tpi, alt: 'Pantai TPI Karangmenjangan', category: 'Beach' },
-  { id: '12', src: wa4, alt: 'Pantai TPI Karangmenjangan', category: 'Beach' },
-  { id: '13', src: wa2, alt: 'Pantai TPI Karangmenjangan', category: 'Beach' },
-  { id: '14', src: wa3, alt: 'Pantai TPI Karangmenjangan', category: 'Beach' },
+  { id: '11', src: tpi, alt: alt('Pantai TPI Karangmenjangan', 'Pantai TPI Karangmenjangan'), category: 'Beach' },
+  { id: '12', src: wa4, alt: alt('Pantai TPI Karangmenjangan', 'Pantai TPI Karangmenjangan'), category: 'Beach' },
+  { id: '13', src: wa2, alt: alt('Pantai TPI Karangmenjangan', 'Pantai TPI Karangmenjangan'), category: 'Beach' },
+  { id: '14', src: wa3, alt: alt('Pantai TPI Karangmenjangan', 'Pantai TPI Karangmenjangan'), category: 'Beach' },
   // Pemandian Umbul
-  { id: '15', src: umbul, alt: 'Pemandian Umbul', category: 'Nature' },
+  { id: '15', src: umbul, alt: alt('Pemandian Umbul', 'Pemandian Umbul'), category: 'Nature' },
   // Muara Karangmenjangan
-  { id: '16', src: img8825, alt: 'Muara Karangmenjangan', category: 'Nature' },
-  { id: '17', src: img8851, alt: 'Muara Karangmenjangan', category: 'Nature' },
-  { id: '18', src: img8816, alt: 'Muara Karangmenjangan', category: 'Nature' },
-  { id: '19', src: img8821, alt: 'Muara Karangmenjangan', category: 'Nature' },
+  { id: '16', src: img8825, alt: alt('Muara Karangmenjangan', 'Muara Karangmenjangan'), category: 'Nature' },
+  { id: '17', src: img8851, alt: alt('Muara Karangmenjangan', 'Muara Karangmenjangan'), category: 'Nature' },
+  { id: '18', src: img8816, alt: alt('Muara Karangmenjangan', 'Muara Karangmenjangan'), category: 'Nature' },
+  { id: '19', src: img8821, alt: alt('Muara Karangmenjangan', 'Muara Karangmenjangan'), category: 'Nature' },
   // Culture
-  { id: '20', src: img7455, alt: 'Religious Diversity & Belief', category: 'Culture' },
-  { id: '21', src: img7863, alt: 'Larung Sesaji', category: 'Culture' },
-  { id: '22', src: img8839, alt: 'Life of the Fishermen', category: 'Culture' },
+  { id: '20', src: img7455, alt: alt('Keberagaman Agama & Keyakinan', 'Religious Diversity & Belief'), category: 'Culture' },
+  { id: '21', src: img7863, alt: alt('Larung Sesaji', 'Larung Sesaji'), category: 'Culture' },
+  { id: '22', src: img8839, alt: alt('Kehidupan Para Nelayan', 'Life of the Fishermen'), category: 'Culture' },
   // Culinary & Local Product
-  { id: '23', src: img8430, alt: 'Smoked Fish Products', category: 'Culinary' },
-  { id: '24', src: ikanAsin, alt: 'Karangmenjangan Salted Fish', category: 'Culinary' },
-  { id: '25', src: img7753, alt: 'Coconut Products', category: 'Local Product' },
+  { id: '23', src: img8430, alt: alt('Produk Ikan Asap', 'Smoked Fish Products'), category: 'Culinary' },
+  { id: '24', src: ikanAsin, alt: alt('Ikan Asin Karangmenjangan', 'Karangmenjangan Salted Fish'), category: 'Culinary' },
+  { id: '25', src: img7753, alt: alt('Produk Kelapa', 'Coconut Products'), category: 'Local Product' },
   // Nature Gallery
-  { id: '26', src: galeriNature1, alt: 'Karangmenjangan Nature', category: 'Nature' },
-  { id: '27', src: galeriNature2, alt: 'Karangmenjangan Nature', category: 'Nature' },
-  { id: '28', src: galerNature3, alt: 'Karangmenjangan Nature', category: 'Nature' },
-  { id: '29', src: galerNature4, alt: 'Karangmenjangan Nature', category: 'Nature' },
+  { id: '26', src: galeriNature1, alt: alt('Alam Karangmenjangan', 'Karangmenjangan Nature'), category: 'Nature' },
+  { id: '27', src: galeriNature2, alt: alt('Alam Karangmenjangan', 'Karangmenjangan Nature'), category: 'Nature' },
+  { id: '28', src: galerNature3, alt: alt('Alam Karangmenjangan', 'Karangmenjangan Nature'), category: 'Nature' },
+  { id: '29', src: galerNature4, alt: alt('Alam Karangmenjangan', 'Karangmenjangan Nature'), category: 'Nature' },
   // Local Product
-  { id: '30', src: localProduct1, alt: 'Coconut Brown Sugar', category: 'Local Product' },
-  { id: '31', src: localProduct2, alt: 'Peanuts', category: 'Local Product' },
-  { id: '32', src: localProduct3, alt: 'Cassava', category: 'Local Product' },
-  { id: '33', src: localProduct4, alt: 'Coconut Brown Sugar', category: 'Local Product' },
-  { id: '34', src: localProduct5, alt: 'Copra', category: 'Local Product' },
-  { id: '35', src: localProduct6, alt: 'Young Coconut', category: 'Local Product' },
+  { id: '30', src: localProduct1, alt: alt('Gula Kelapa', 'Coconut Brown Sugar'), category: 'Local Product' },
+  { id: '31', src: localProduct2, alt: alt('Kacang Tanah', 'Peanuts'), category: 'Local Product' },
+  { id: '32', src: localProduct3, alt: alt('Singkong', 'Cassava'), category: 'Local Product' },
+  { id: '33', src: localProduct4, alt: alt('Gula Kelapa', 'Coconut Brown Sugar'), category: 'Local Product' },
+  { id: '34', src: localProduct5, alt: alt('Kopra', 'Copra'), category: 'Local Product' },
+  { id: '35', src: localProduct6, alt: alt('Kelapa Muda', 'Young Coconut'), category: 'Local Product' },
   // Culture
-  { id: '36', src: culture1, alt: 'Karangmenjangan Culture', category: 'Culture' },
+  { id: '36', src: culture1, alt: alt('Budaya Karangmenjangan', 'Karangmenjangan Culture'), category: 'Culture' },
   // Culinary
-  { id: '37', src: kuliner1, alt: 'Fresh Fish', category: 'Culinary' },
-  { id: '38', src: kuliner2, alt: 'Signature Sambal', category: 'Culinary' },
+  { id: '37', src: kuliner1, alt: alt('Ikan Segar', 'Fresh Fish'), category: 'Culinary' },
+  { id: '38', src: kuliner2, alt: alt('Sambal Khas', 'Signature Sambal'), category: 'Culinary' },
 ]

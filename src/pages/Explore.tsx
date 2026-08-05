@@ -2,14 +2,17 @@ import { motion } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading'
 import DestinationCard from '../components/DestinationCard'
 import { destinations } from '../data/destinations'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Explore() {
+  const { t } = useLanguage()
+
   return (
     <div className="pt-24 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
-          title="Explore"
-          subtitle="Discover the beauty of Karangmenjangan"
+          title={t('explore.title')}
+          subtitle={t('explore.subtitle')}
         />
         <motion.div
           initial={{ opacity: 0 }}

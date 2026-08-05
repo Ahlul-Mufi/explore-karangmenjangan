@@ -1,10 +1,15 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import type { GalleryItem } from '../types'
+
+interface SliderPhoto {
+  id: string
+  src: string
+  alt: string
+}
 
 interface PhotoSliderProps {
-  photos: GalleryItem[]
+  photos: SliderPhoto[]
   autoplay?: boolean
   interval?: number
   className?: string

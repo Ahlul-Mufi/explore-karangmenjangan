@@ -1,14 +1,17 @@
 import { motion } from 'framer-motion'
 import SectionHeading from '../components/SectionHeading'
 import { umkmItems } from '../data/umkm'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Umkm() {
+  const { t, pick, tCat } = useLanguage()
+
   return (
     <div className="pt-24 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
-          title="UMKM and Local Products"
-          subtitle="Handcrafted goods and local flavors from Karangmenjangan"
+          title={t('umkm.title')}
+          subtitle={t('umkm.subtitle')}
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {umkmItems.map((item, i) => (
@@ -22,17 +25,17 @@ export default function Umkm() {
             >
               <div className="aspect-[4/3] bg-gradient-to-br from-[#BC6C25]/10 to-[#184332]/5 flex items-center justify-center overflow-hidden">
                 {item.image && !item.image.startsWith('/images/') ? (
-                  <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                  <img src={item.image} alt={pick(item.name)} className="w-full h-full object-cover" />
                 ) : (
-                  <span className="text-[#184332]/30 font-sans text-lg">{item.name}</span>
+                  <span className="text-[#184332]/30 font-sans text-lg">{pick(item.name)}</span>
                 )}
               </div>
               <div className="p-5">
                 <span className="inline-block px-3 py-1 bg-[#0077B6]/10 text-[#0077B6] rounded-full text-xs font-sans font-semibold mb-3">
-                  {item.category}
+                  {tCat(item.category)}
                 </span>
-                <h3 className="font-sans text-lg font-semibold text-[#184332] mb-2">{item.name}</h3>
-                <p className="font-sans text-sm text-[#26332E]/70 leading-relaxed">{item.description}</p>
+                <h3 className="font-sans text-lg font-semibold text-[#184332] mb-2">{pick(item.name)}</h3>
+                <p className="font-sans text-sm text-[#26332E]/70 leading-relaxed">{pick(item.description)}</p>
               </div>
             </motion.div>
           ))}

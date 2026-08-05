@@ -2,11 +2,13 @@ import { useState } from 'react'
 import SectionHeading from '../components/SectionHeading'
 import Gallery from '../components/Gallery'
 import { galleryItems } from '../data/gallery'
+import { useLanguage } from '../i18n/LanguageContext'
 
-const categories = ['All', 'Beach', 'Nature', 'Culture', 'Culinary', 'Local Product']
+const categories = ['All', 'Beach', 'Nature', 'Culture', 'Culinary', 'Local Product'] as const
 
 export default function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState('All')
+  const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]>('All')
+  const { t, tCat } = useLanguage()
 
   const filtered = activeCategory === 'All'
     ? galleryItems
@@ -16,8 +18,8 @@ export default function GalleryPage() {
     <div className="pt-24 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
         <SectionHeading
-          title="Gallery"
-          subtitle="Capturing the beauty and spirit of Karangmenjangan"
+          title={t('gallery.title')}
+          subtitle={t('gallery.subtitle')}
         />
         <div className="flex flex-wrap gap-3 justify-center mb-10">
           {categories.map((cat) => (
@@ -31,7 +33,7 @@ export default function GalleryPage() {
                   : 'bg-white text-[#26332E]/70 hover:bg-[#184332]/10'
               }`}
             >
-              {cat}
+              {tCat(cat)}
             </button>
           ))}
         </div>

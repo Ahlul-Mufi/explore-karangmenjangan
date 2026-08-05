@@ -1,33 +1,33 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Compass } from 'lucide-react'
+import { Menu, X, Compass, Globe } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const navLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Explore', to: '/explore' },
-  { label: 'Packages', to: '/packages' },
-  { label: 'About', to: '/about' },
-  { label: 'Culture', to: '/culture' },
-  { label: 'UMKM', to: '/umkm' },
-  { label: 'Gallery', to: '/gallery' },
-]
+  { label: 'nav.home', to: '/' },
+  { label: 'nav.explore', to: '/explore' },
+  { label: 'nav.packages', to: '/packages' },
+  { label: 'nav.about', to: '/about' },
+  { label: 'nav.culture', to: '/culture' },
+  { label: 'nav.umkm', to: '/umkm' },
+  { label: 'nav.gallery', to: '/gallery' },
+] as const
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { t, lang, setLang } = useLanguage()
   const location = useLocation()
   const isHome = location.pathname === '/'
+
+  const toggleLang = () => setLang(lang === 'id' ? 'en' : 'id')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  useEffect(() => {
-    setMobileOpen(false)
-  }, [location])
 
   const showBg = scrolled || !isHome
 
@@ -58,14 +58,23 @@ export default function Navbar() {
                       : 'text-white/80 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               ))}
+              <button
+                type="button"
+                onClick={toggleLang}
+                aria-label={lang === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}
+                className="ml-3 px-3 py-2 rounded-full border border-white/40 text-white text-xs font-sans font-semibold hover:bg-white/10 transition-colors flex items-center gap-1.5"
+              >
+                <Globe className="w-4 h-4" />
+                {lang === 'id' ? 'EN' : 'ID'}
+              </button>
               <Link
                 to="/explore"
                 className="ml-3 px-5 py-2 bg-[#BC6C25] hover:bg-[#a05e1f] text-white rounded-full text-sm font-sans font-semibold transition-colors"
               >
-                Explore Now
+                {t('nav.exploreNow')}
               </Link>
             </div>
 
@@ -96,27 +105,39 @@ export default function Navbar() {
                   KAWIKA
                 </span>
               </Link>
-              <button
-                type="button"
-                className="text-white p-2"
-                onClick={() => setMobileOpen(false)}
-                aria-label="Close menu"
-              >
-                <X className="w-6 h-6" />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={toggleLang}
+                  aria-label={lang === 'id' ? 'Switch to English' : 'Ganti ke Bahasa Indonesia'}
+                  className="px-3 py-1.5 rounded-full border border-white/40 text-white text-xs font-sans font-semibold hover:bg-white/10 transition-colors flex items-center gap-1.5"
+                >
+                  <Globe className="w-4 h-4" />
+                  {lang === 'id' ? 'EN' : 'ID'}
+                </button>
+                <button
+                  type="button"
+                  className="text-white p-2"
+                  onClick={() => setMobileOpen(false)}
+                  aria-label="Close menu"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
             </div>
             <div className="flex flex-col p-4 gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
+                  onClick={() => setMobileOpen(false)}
                   className={`block px-4 py-3 rounded-xl text-base font-sans font-medium transition-colors ${
                     location.pathname === link.to
                       ? 'text-white bg-white/15'
                       : 'text-white/80 hover:text-white hover:bg-white/10'
                   }`}
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               ))}
             </div>

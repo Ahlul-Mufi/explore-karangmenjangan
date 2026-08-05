@@ -13,6 +13,7 @@ import { galleryItems } from '../data/gallery'
 import { packages } from '../data/packages'
 import PackageCard from '../components/PackageCard'
 import TestimonialCarousel from '../components/TestimonialCarousel'
+import { useLanguage } from '../i18n/LanguageContext'
 import maskot from '../assets/maskot-crop.png'
 import maskot2 from '../assets/maskot-crop-2.png'
 import maskot3 from '../assets/maskot-crop-3.png'
@@ -22,11 +23,12 @@ import viewImg from '../assets/view.jpg.jpeg'
 import localLifeImg from '../assets/IMG_8059.JPG.jpeg'
 
 export default function Home() {
+  const { t, pick, tCat } = useLanguage()
   const [flyingDone, setFlyingDone] = useState(false)
   const [destImgIn, setDestImgIn] = useState(false)
   useEffect(() => {
-    const t = setTimeout(() => setFlyingDone(true), 4000)
-    return () => clearTimeout(t)
+    const timer = setTimeout(() => setFlyingDone(true), 4000)
+    return () => clearTimeout(timer)
   }, [])
   return (
     <>
@@ -62,7 +64,7 @@ export default function Home() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="text-[#BC6C25] font-sans text-sm md:text-base uppercase tracking-widest mb-4"
             >
-              Hidden Amazon in East Java
+              {t('home.heroTagline')}
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -70,9 +72,9 @@ export default function Home() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-white font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
             >
-              Welcome to Kampung Wisata
+              {t('home.heroTitle1')}
               <br />
-              <span className="text-[#BC6C25]">Karangmenjangan (KaWiKa)</span>
+              <span className="text-[#BC6C25]">{t('home.heroTitle2')}</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -80,7 +82,7 @@ export default function Home() {
               transition={{ delay: 0.8, duration: 0.8 }}
               className="mt-6 mb-8 text-white/80 font-sans text-lg md:text-xl max-w-2xl mx-auto"
             >
-              The term 'kampung' in 'Kampung Wisata Karangmenjangan' refers to a local term that identically refers to a part of the hamlet area as 'kampung'.
+              {t('home.heroSubtitle')}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -92,13 +94,13 @@ export default function Home() {
                 to="/explore"
                 className="inline-flex items-center gap-2 bg-[#BC6C25] hover:bg-[#a05e1f] text-white px-8 py-3 rounded-full font-sans font-semibold transition-colors"
               >
-                Explore Now <ChevronRight className="w-4 h-4" />
+                {t('nav.exploreNow')} <ChevronRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/culture"
                 className="inline-flex items-center gap-2 border-2 border-white/50 hover:bg-white/10 text-white px-8 py-3 rounded-full font-sans font-medium transition-colors"
               >
-                Discover Culture
+                {t('home.discoverCulture')}
               </Link>
             </motion.div>
           </div>
@@ -125,7 +127,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
                 className="font-sans text-3xl md:text-4xl lg:text-5xl text-[#184332] mb-4 leading-tight"
               >
-                Featured Destinations
+                {t('home.featuredTitle')}
               </motion.h2>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -134,7 +136,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="font-sans text-[#26332E]/70 text-base md:text-lg max-w-2xl"
               >
-                Curated picks of top places to explore in Karangmenjangan
+                {t('home.featuredSubtitle')}
               </motion.p>
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -168,7 +170,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <Button to="/explore" variant="primary">
-              See all destinations
+              {t('home.seeAllDestinations')}
             </Button>
           </div>
         </div>
@@ -178,8 +180,8 @@ export default function Home() {
       <section className="py-20 px-4 bg-[#FEFAE0]">
         <div className="max-w-6xl mx-auto">
           <SectionHeading
-            title="Tour Packages"
-            subtitle="Choose the tour package that suits your needs"
+            title={t('home.packagesTitle')}
+            subtitle={t('home.packagesSubtitle')}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {packages.slice(0, 3).map((pkg, i) => (
@@ -188,7 +190,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <Button to="/packages" variant="primary">
-              View all packages
+              {t('home.viewAllPackages')}
             </Button>
           </div>
         </div>
@@ -205,16 +207,16 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="font-sans text-4xl md:text-5xl text-[#184332] mb-6 leading-tight">
-                Immerse yourself<br />in nature
+                {t('home.natureTitle1')}<br />{t('home.natureTitle2')}
               </h2>
               <p className="font-sans text-lg md:text-xl text-[#26332E]/80 mb-6 leading-relaxed">
-                From the gentle rustle of coconut leaves to the roar of southern waves against the rocks.
+                {t('home.natureText1')}
               </p>
               <p className="font-sans text-sm md:text-base text-[#26332E]/60 mb-8 leading-relaxed">
-                Expanses of rice fields stretch across parts of the village. The cool countryside air, and the rocky landscapes that shape the hills. Banana trees line the plantations on both sides of the road, along with coconut palms as the main commodity. Beaches and rivers at the edges of the area bring the soothing rustle of waves and breeze. The exotic crash of southern ocean waves captivates the eye.
+                {t('home.natureText2')}
               </p>
               <Button to="/about" variant="outline">
-                Learn more
+                {t('home.learnMore')}
               </Button>
             </motion.div>
             <motion.div
@@ -226,7 +228,7 @@ export default function Home() {
             >
               <img
                 src={viewImg}
-                alt="Immerse yourself in nature"
+                alt={t('home.natureTitle1')}
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -238,8 +240,8 @@ export default function Home() {
       <section className="py-20 px-4 bg-[#184332]/5">
         <div className="max-w-6xl mx-auto">
           <SectionHeading
-            title="Heritage & Culture"
-            subtitle="Traditions and stories passed down through generations"
+            title={t('home.heritageTitle')}
+            subtitle={t('home.heritageSubtitle')}
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
             {cultureItems.slice(0, 3).map((item, i) => (
@@ -255,7 +257,7 @@ export default function Home() {
                   <div className="flex items-center justify-center mb-6">
                     <img
                       src={maskot}
-                      alt="Larung Sesaji"
+                      alt={pick(item.title)}
                       className="w-[120px] h-[120px] object-contain"
                     />
                   </div>
@@ -263,7 +265,7 @@ export default function Home() {
                   <div className="flex items-center justify-center mb-6">
                     <img
                       src={maskot3}
-                      alt="Life of the Fishermen"
+                      alt={pick(item.title)}
                       className="w-[120px] h-[120px] object-contain"
                     />
                   </div>
@@ -271,7 +273,7 @@ export default function Home() {
                   <div className="flex items-center justify-center mb-6">
                     <img
                       src={maskot2}
-                      alt="Religious Diversity & Belief"
+                      alt={pick(item.title)}
                       className="w-[120px] h-[120px] object-contain"
                     />
                   </div>
@@ -280,15 +282,15 @@ export default function Home() {
                     <span className="text-2xl">⛵</span>
                   </div>
                 )}
-                <h3 className="font-sans text-xl font-semibold text-[#184332] mb-2">{item.title}</h3>
-                <p className="font-sans text-sm text-[#26332E]/50 mb-3">{item.subtitle}</p>
-                <p className="font-sans text-sm text-[#26332E]/70 leading-relaxed">{item.description}</p>
+                <h3 className="font-sans text-xl font-semibold text-[#184332] mb-2">{pick(item.title)}</h3>
+                <p className="font-sans text-sm text-[#26332E]/50 mb-3">{pick(item.subtitle)}</p>
+                <p className="font-sans text-sm text-[#26332E]/70 leading-relaxed">{pick(item.description)}</p>
               </motion.div>
             ))}
           </div>
           <div className="text-center mt-10">
             <Button to="/culture" variant="primary">
-              Explore culture
+              {t('home.exploreCulture')}
             </Button>
           </div>
         </div>
@@ -306,16 +308,16 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="font-sans text-4xl md:text-5xl text-[#184332] mb-6 leading-tight">
-                  Live the local life
+                  {t('home.localLifeTitle')}
                 </h2>
                 <p className="font-sans text-lg md:text-xl text-[#26332E]/80 mb-6 leading-relaxed">
-                  Experience daily life with the Karangmenjangan community.
+                  {t('home.localLifeText1')}
                 </p>
                 <p className="font-sans text-sm md:text-base text-[#26332E]/70 mb-6 leading-relaxed">
-                  Join the fisherman at dawn as they check their nets amongst the boats at the end of the river. Participate in a cooking class using the day's catch. Listen to elders tell stories of ancestors beneath the banyan tree or learn about the preparation of offerings for sacred rituals.
+                  {t('home.localLifeText2')}
                 </p>
                 <p className="font-sans text-sm md:text-base text-[#26332E]/70 leading-relaxed">
-                  These are the experiences that remain with you long after you return home.
+                  {t('home.localLifeText3')}
                 </p>
               </motion.div>
               <motion.div
@@ -327,7 +329,7 @@ export default function Home() {
               >
                 <img
                   src={localLifeImg}
-                  alt="Live the local life"
+                  alt={t('home.localLifeTitle')}
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -339,8 +341,8 @@ export default function Home() {
       <section className="py-20 px-4 bg-[#FEFAE0]">
         <div className="max-w-6xl mx-auto">
           <SectionHeading
-            title="UMKM & Local Products"
-            subtitle="Handcrafted goods and local flavors from Karangmenjangan"
+            title={t('home.umkmTitle')}
+            subtitle={t('home.umkmSubtitle')}
           />
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {umkmItems.slice(0, 6).map((item, i) => {
@@ -355,17 +357,17 @@ export default function Home() {
                 >
                   <div className="aspect-[4/3] bg-gradient-to-br from-[#BA6C25]/10 to-[#184332]/5 flex items-center justify-center overflow-hidden">
                     {item.image && !item.image.startsWith('/images/') ? (
-                      <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                      <img src={item.image} alt={pick(item.name)} className="w-full h-full object-cover" />
                     ) : (
-                      <span className="text-[#184332]/30 font-sans text-sm">{item.name}</span>
+                      <span className="text-[#184332]/30 font-sans text-sm">{pick(item.name)}</span>
                     )}
                   </div>
                   <div className="p-4">
                     <span className="inline-block px-2 py-0.5 bg-[#0077B6]/10 text-[#0077B6] rounded text-xs font-sans font-semibold mb-2">
-                      {item.category}
+                      {tCat(item.category)}
                     </span>
-                    <h3 className="font-sans text-base font-semibold text-[#184332] mb-1">{item.name}</h3>
-                    <p className="font-sans text-xs text-[#26332E]/70 line-clamp-2">{item.description}</p>
+                    <h3 className="font-sans text-base font-semibold text-[#184332] mb-1">{pick(item.name)}</h3>
+                    <p className="font-sans text-xs text-[#26332E]/70 line-clamp-2">{pick(item.description)}</p>
                   </div>
                 </motion.div>
               )
@@ -373,7 +375,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <Button to="/umkm" variant="primary">
-              View all products
+              {t('home.viewAllProducts')}
             </Button>
           </div>
         </div>
@@ -384,13 +386,13 @@ export default function Home() {
       <section className="py-20 px-4 bg-[#FEFAE0]">
         <div className="max-w-6xl mx-auto">
           <SectionHeading
-            title="Gallery"
-            subtitle="Capturing the beauty of Karangmenjangan"
+            title={t('home.galleryTitle')}
+            subtitle={t('home.gallerySubtitle')}
           />
           <Gallery items={galleryItems.slice(0, 8)} />
           <div className="text-center mt-10">
             <Button to="/gallery" variant="outline">
-              View full gallery
+              {t('home.viewFullGallery')}
             </Button>
           </div>
         </div>
@@ -402,23 +404,20 @@ export default function Home() {
       {/* Location */}
       <section className="py-20 px-4 bg-[#FEFAE0]">
         <SectionHeading
-          title="Find us on the map"
-          subtitle="Come visit us in the South coast of Lumajang, East Java"
+          title={t('home.mapTitle')}
+          subtitle={t('home.mapSubtitle')}
         />
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
             <div className="bg-white rounded-2xl shadow-md p-8">
               <h3 className="font-sans text-2xl font-semibold text-[#184332] mb-4">Karangmenjangan</h3>
-              <p className="font-sans text-sm text-[#26332E] mb-2">Karangmenjangan Hamlet</p>
-              <p className="font-sans text-sm text-[#26332E] mb-2">Bulurejo Village</p>
-              <p className="font-sans text-sm text-[#26332E] mb-2">Tempursari District</p>
-              <p className="font-sans text-sm text-[#26332E] mb-4">Lumajang Regency, East Java 67375</p>
+              <p className="font-sans text-sm text-[#26332E] whitespace-pre-line leading-relaxed">{t('home.mapAddress')}</p>
               <div className="border-t border-gray-200 pt-4 mt-4">
                 <p className="font-sans text-xs text-[#26332E]/60">
-                  ~56 km south of the Lumajang Regency center (approx. 1.5 hours by road)
+                  {t('home.distance1')}
                 </p>
                 <p className="font-sans text-xs text-[#26332E]/60 mt-2">
-                  ~5.5 km south of Tempursari District (approx. 10 minutes by road)
+                  {t('home.distance2')}
                 </p>
               </div>
             </div>
@@ -437,7 +436,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="absolute bottom-4 right-4 inline-flex items-center gap-2 bg-[#184332] text-white font-sans text-sm font-semibold px-4 py-2 rounded-full shadow-lg hover:bg-[#BC6C25] transition-colors"
             >
-              <MapPin className="w-4 h-4" /> Open in Google Maps
+              <MapPin className="w-4 h-4" /> {t('home.openInGoogleMaps')}
             </a>
           </div>
         </div>
@@ -453,7 +452,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-sans font-bold mb-6"
           >
-            Ready to Explore Karangmenjangan?
+            {t('home.ctaTitle')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -462,7 +461,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-lg md:text-xl font-sans text-white/80 mb-10"
           >
-            Discover the stories, nature, and local life waiting for you.
+            {t('home.ctaSubtitle')}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -475,15 +474,15 @@ export default function Home() {
               to="/packages"
               className="bg-white text-[#184332] font-sans font-semibold px-8 py-4 rounded-full inline-flex items-center gap-2 hover:bg-white/90 transition-colors"
             >
-              View Tour Packages
+              {t('home.viewTourPackages')}
             </Link>
             <a
-              href="https://api.whatsapp.com/send?phone=6285234791369&text=Hello%2C%20I%20am%20interested%20in%20the%20Karangmenjangan%20tourism"
+              href="https://api.whatsapp.com/send?phone=6281335269128&text=Hello%2C%20I%20am%20interested%20in%20the%20Karangmenjangan%20tourism"
               target="_blank"
               rel="noopener noreferrer"
               className="border-2 border-white/50 hover:bg-white/10 text-white font-sans font-medium px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
             >
-              Chat WhatsApp
+              {t('home.chatWhatsapp')}
             </a>
           </motion.div>
         </div>

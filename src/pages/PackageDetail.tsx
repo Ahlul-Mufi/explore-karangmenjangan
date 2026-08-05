@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft, Clock, Users, Check, X, MessageCircle, MapPin } from 'lucide-react'
 import { getPackageBySlug } from '../data/packages'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function formatPrice(price: number): string {
   return new Intl.NumberFormat('id-ID', {
@@ -13,18 +14,19 @@ function formatPrice(price: number): string {
 
 export default function PackageDetail() {
   const { slug } = useParams()
+  const { t, pick, tCat } = useLanguage()
   const pkg = getPackageBySlug(slug || '')
 
   if (!pkg) {
     return (
       <div className="pt-24 pb-16 px-4 text-center">
-        <h2 className="text-2xl font-sans text-[#184332] mb-4">Package not found</h2>
-        <Link to="/packages" className="text-[#BC6C25] underline">Back to packages</Link>
+        <h2 className="text-2xl font-sans text-[#184332] mb-4">{t('packages.notFound')}</h2>
+        <Link to="/packages" className="text-[#BC6C25] underline">{t('packages.backToPackages')}</Link>
       </div>
     )
   }
 
-  const waUrl = `https://api.whatsapp.com/send?phone=${pkg.whatsapp}&text=${encodeURIComponent(`Hello, I am interested in the "${pkg.name}" package. Please provide more information.`)}`
+  const waUrl = `https://api.whatsapp.com/send?phone=${pkg.whatsapp}&text=${encodeURIComponent(t('pkgDetail.waMessage').replace('{package}', pick(pkg.name)))}`
 
   return (
     <div className="pb-16">
@@ -33,10 +35,10 @@ export default function PackageDetail() {
         <div className="h-64 md:h-80 bg-[#184332] flex items-center justify-center relative">
           <div className="text-center text-white">
             <span className="inline-block px-3 py-1 bg-[#BC6C25]/80 text-white rounded-full text-xs font-sans font-semibold mb-4">
-              {pkg.category}
+              {tCat(pkg.category)}
             </span>
-            <h1 className="text-3xl md:text-5xl font-sans font-bold mb-3">{pkg.name}</h1>
-            <p className="text-lg font-sans text-white/80 max-w-xl mx-auto px-4">{pkg.tagline}</p>
+            <h1 className="text-3xl md:text-5xl font-sans font-bold mb-3">{pick(pkg.name)}</h1>
+            <p className="text-lg font-sans text-white/80 max-w-xl mx-auto px-4">{pick(pkg.tagline)}</p>
           </div>
         </div>
       </div>
@@ -46,7 +48,7 @@ export default function PackageDetail() {
           to="/packages"
           className="inline-flex items-center gap-2 font-sans text-sm text-[#BC6C25] mt-6 hover:underline"
         >
-          <ArrowLeft className="w-4 h-4" /> Back to Tour Packages
+          <ArrowLeft className="w-4 h-4" /> {t('packages.backToTourPackages')}
         </Link>
       </div>
 
@@ -60,18 +62,18 @@ export default function PackageDetail() {
         >
           <div className="bg-white rounded-xl p-4 text-center shadow-sm">
             <Clock className="w-6 h-6 text-[#BC6C25] mx-auto mb-2" />
-            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Duration</p>
-            <p className="font-sans text-sm font-semibold text-[#184332]">{pkg.duration}</p>
+            <p className="font-sans text-xs text-[#26332E]/60 mb-1">{t('pkgDetail.duration')}</p>
+            <p className="font-sans text-sm font-semibold text-[#184332]">{pick(pkg.duration)}</p>
           </div>
           <div className="bg-white rounded-xl p-4 text-center shadow-sm">
             <Users className="w-6 h-6 text-[#BC6C25] mx-auto mb-2" />
-            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Participants</p>
-            <p className="font-sans text-sm font-semibold text-[#184332]">{pkg.minPerson}-{pkg.maxPerson} people</p>
+            <p className="font-sans text-xs text-[#26332E]/60 mb-1">{t('pkgDetail.participants')}</p>
+            <p className="font-sans text-sm font-semibold text-[#184332]">{pkg.minPerson}-{pkg.maxPerson} {t('common.people')}</p>
           </div>
           <div className="bg-white rounded-xl p-4 text-center shadow-sm col-span-2 md:col-span-2">
-            <p className="font-sans text-xs text-[#26332E]/60 mb-1">Starting From</p>
+            <p className="font-sans text-xs text-[#26332E]/60 mb-1">{t('pkgDetail.startingFrom')}</p>
             <p className="font-sans text-2xl font-bold text-[#BC6C25]">{formatPrice(pkg.price)}</p>
-            <p className="font-sans text-[10px] text-[#26332E]/50">{pkg.priceNote}</p>
+            <p className="font-sans text-[10px] text-[#26332E]/50">{pick(pkg.priceNote)}</p>
           </div>
         </motion.div>
 
@@ -82,14 +84,14 @@ export default function PackageDetail() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="bg-white rounded-2xl shadow-md p-8 md:p-10 mb-8"
         >
-          <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">About This Package</h2>
-          <p className="font-sans text-base text-[#26332E]/80 leading-relaxed mb-6">{pkg.description}</p>
+          <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">{t('pkgDetail.aboutThisPackage')}</h2>
+          <p className="font-sans text-base text-[#26332E]/80 leading-relaxed mb-6">{pick(pkg.description)}</p>
 
-          <h3 className="text-lg font-sans font-bold text-[#184332] mb-3">Highlights</h3>
+          <h3 className="text-lg font-sans font-bold text-[#184332] mb-3">{t('pkgDetail.highlights')}</h3>
           <ul className="space-y-2 mb-0">
             {pkg.highlights.map((h, i) => (
               <li key={i} className="flex items-start gap-2 font-sans text-sm text-[#26332E]/80">
-                <Check className="w-4 h-4 text-[#BC6C25] mt-0.5 shrink-0" /> {h}
+                <Check className="w-4 h-4 text-[#BC6C25] mt-0.5 shrink-0" /> {pick(h)}
               </li>
             ))}
           </ul>
@@ -102,7 +104,7 @@ export default function PackageDetail() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-white rounded-2xl shadow-md p-8 md:p-10 mb-8"
         >
-          <h2 className="text-xl font-sans font-bold text-[#184332] mb-6">Itinerary</h2>
+          <h2 className="text-xl font-sans font-bold text-[#184332] mb-6">{t('pkgDetail.itinerary')}</h2>
           <div className="space-y-4">
             {pkg.itinerary.map((item, i) => (
               <div key={i} className="flex gap-4 items-start">
@@ -111,7 +113,7 @@ export default function PackageDetail() {
                 </div>
                 <div className="relative flex-1 pb-4 border-l-2 border-[#BC6C25]/20 pl-4">
                   <div className="absolute left-[-5px] top-1.5 w-2 h-2 bg-[#BC6C25] rounded-full" />
-                  <p className="font-sans text-sm text-[#26332E]/80">{item.activity}</p>
+                  <p className="font-sans text-sm text-[#26332E]/80">{pick(item.activity)}</p>
                 </div>
               </div>
             ))}
@@ -126,11 +128,11 @@ export default function PackageDetail() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="bg-white rounded-2xl shadow-md p-8"
           >
-            <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Facilities</h2>
+            <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">{t('pkgDetail.facilities')}</h2>
             <ul className="space-y-2">
               {pkg.facilities.map((f, i) => (
                 <li key={i} className="flex items-center gap-2 font-sans text-sm text-[#26332E]/80">
-                  <Check className="w-4 h-4 text-green-500" /> {f}
+                  <Check className="w-4 h-4 text-green-500" /> {pick(f)}
                 </li>
               ))}
             </ul>
@@ -142,23 +144,23 @@ export default function PackageDetail() {
             transition={{ duration: 0.5, delay: 0.35 }}
             className="bg-white rounded-2xl shadow-md p-8"
           >
-            <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Included & Not Included</h2>
+            <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">{t('pkgDetail.includedNotIncluded')}</h2>
             <div className="mb-4">
-              <p className="font-sans text-xs font-semibold text-green-600 uppercase tracking-wider mb-2">Included</p>
+              <p className="font-sans text-xs font-semibold text-green-600 uppercase tracking-wider mb-2">{t('pkgDetail.included')}</p>
               <ul className="space-y-1">
                 {pkg.includes.map((item, i) => (
                   <li key={i} className="flex items-center gap-2 font-sans text-sm text-[#26332E]/80">
-                    <Check className="w-3.5 h-3.5 text-green-500" /> {item}
+                    <Check className="w-3.5 h-3.5 text-green-500" /> {pick(item)}
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <p className="font-sans text-xs font-semibold text-red-500 uppercase tracking-wider mb-2">Not Included</p>
+              <p className="font-sans text-xs font-semibold text-red-500 uppercase tracking-wider mb-2">{t('pkgDetail.notIncluded')}</p>
               <ul className="space-y-1">
                 {pkg.excludes.map((item, i) => (
                   <li key={i} className="flex items-center gap-2 font-sans text-sm text-[#26332E]/80">
-                    <X className="w-3.5 h-3.5 text-red-400" /> {item}
+                    <X className="w-3.5 h-3.5 text-red-400" /> {pick(item)}
                   </li>
                 ))}
               </ul>
@@ -173,10 +175,10 @@ export default function PackageDetail() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="bg-white rounded-2xl shadow-md p-8 mb-8"
         >
-          <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">Location</h2>
+          <h2 className="text-xl font-sans font-bold text-[#184332] mb-4">{t('pkgDetail.location')}</h2>
           <p className="flex items-start gap-2 font-sans text-sm text-[#26332E]/70">
             <MapPin className="h-5 w-5 text-[#BC6C25] shrink-0 mr-1" />
-            Karangmenjangan Hamlet, Bulurejo Village, Tempursari District, Lumajang Regency, East Java 67375
+            {t('pkgDetail.locationAddress')}
           </p>
         </motion.div>
 
@@ -187,8 +189,8 @@ export default function PackageDetail() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="bg-[#184332] rounded-2xl p-8 text-center"
         >
-          <h2 className="text-2xl font-sans font-bold text-white mb-3">Interested in this package?</h2>
-          <p className="text-white/70 font-sans text-sm mb-6">Contact us via WhatsApp for more information and bookings</p>
+          <h2 className="text-2xl font-sans font-bold text-white mb-3">{t('pkgDetail.interested')}</h2>
+          <p className="text-white/70 font-sans text-sm mb-6">{t('pkgDetail.interestedSub')}</p>
           <a
             href={waUrl}
             target="_blank"
@@ -196,7 +198,7 @@ export default function PackageDetail() {
             className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-full font-sans font-semibold transition-colors"
           >
             <MessageCircle className="w-5 h-5" />
-            Booking via WhatsApp
+            {t('pkgDetail.bookingWhatsapp')}
           </a>
         </motion.div>
       </div>

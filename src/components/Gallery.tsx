@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import type { GalleryItem } from '../types'
+import { useLanguage } from '../i18n/LanguageContext'
 
 interface GalleryProps {
   items: GalleryItem[]
@@ -9,6 +10,7 @@ interface GalleryProps {
 
 export default function Gallery({ items }: GalleryProps) {
   const [selected, setSelected] = useState<GalleryItem | null>(null)
+  const { pick } = useLanguage()
 
   return (
     <>
@@ -26,13 +28,13 @@ export default function Gallery({ items }: GalleryProps) {
             <div className="aspect-square w-full bg-[#FEFAE0]">
               <img
                 src={item.src}
-                alt={item.alt}
+                alt={pick(item.alt)}
                 loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="px-2 py-2 text-center">
-              <p className="font-sans text-xs text-[#184332] truncate">{item.alt}</p>
+              <p className="font-sans text-xs text-[#184332] truncate">{pick(item.alt)}</p>
             </div>
           </motion.div>
         ))}
@@ -65,11 +67,11 @@ export default function Gallery({ items }: GalleryProps) {
               <div className="aspect-[4/3] bg-[#FEFAE0] rounded-xl overflow-hidden">
                 <img
                   src={selected.src}
-                  alt={selected.alt}
+                  alt={pick(selected.alt)}
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="text-white text-center mt-3 font-sans text-sm">{selected.alt}</p>
+              <p className="text-white text-center mt-3 font-sans text-sm">{pick(selected.alt)}</p>
             </motion.div>
           </motion.div>
         )}

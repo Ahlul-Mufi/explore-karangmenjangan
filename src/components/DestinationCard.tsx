@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { MapPin, ArrowRight } from 'lucide-react'
 import type { Destination } from '../types'
+import { useLanguage } from '../i18n/LanguageContext'
 
 interface DestinationCardProps {
   destination: Destination
@@ -9,6 +10,8 @@ interface DestinationCardProps {
 }
 
 export default function DestinationCard({ destination, index = 0 }: DestinationCardProps) {
+  const { pick, tCat, t } = useLanguage()
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -23,27 +26,27 @@ export default function DestinationCard({ destination, index = 0 }: DestinationC
         <div className="aspect-[4/3] bg-[#FEFAE0] overflow-hidden">
           <img
             src={destination.image}
-            alt={destination.title}
+            alt={pick(destination.title)}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
         <div className="p-5">
           <span className="inline-block px-3 py-1 bg-[#BC6C25]/10 text-[#BC6C25] text-xs font-sans font-semibold rounded-full mb-3">
-            {destination.category}
+            {tCat(destination.category)}
           </span>
           <h3 className="font-sans text-xl text-[#184332] group-hover:text-[#BC6C25] transition-colors mb-2">
-            {destination.title}
+            {pick(destination.title)}
           </h3>
           <p className="font-sans text-sm text-[#26332E]/70 mb-4 line-clamp-2">
-            {destination.description}
+            {pick(destination.description)}
           </p>
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-1 text-xs text-[#26332E]/50 font-sans">
               <MapPin className="w-3 h-3" />
-              Karangmenjangan
+              {t('common.karangmenjangan')}
             </span>
             <span className="flex items-center gap-1 text-sm font-sans font-medium text-[#184332] group-hover:text-[#BC6C25] transition-colors">
-              Explore <ArrowRight className="w-4 h-4" />
+              {t('common.explore')} <ArrowRight className="w-4 h-4" />
             </span>
           </div>
         </div>

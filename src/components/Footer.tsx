@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom'
-import { Compass, Mail, MapPin, MessageCircle, Camera, Music2, Video } from 'lucide-react'
+import { Compass, Mail, MapPin, MessageCircle, Camera, Music2, Video, Share2 } from 'lucide-react'
+import { useLanguage } from '../i18n/LanguageContext'
 
 const navLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Explore', to: '/explore' },
-  { label: 'Packages', to: '/packages' },
-  { label: 'About', to: '/about' },
-  { label: 'Culture', to: '/culture' },
-  { label: 'UMKM', to: '/umkm' },
-  { label: 'Gallery', to: '/gallery' },
-]
+  { label: 'nav.home', to: '/' },
+  { label: 'nav.explore', to: '/explore' },
+  { label: 'nav.packages', to: '/packages' },
+  { label: 'nav.about', to: '/about' },
+  { label: 'nav.culture', to: '/culture' },
+  { label: 'nav.umkm', to: '/umkm' },
+  { label: 'nav.gallery', to: '/gallery' },
+] as const
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="bg-[#184332] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -24,12 +27,12 @@ export default function Footer() {
               </span>
             </div>
             <p className="font-sans text-sm text-white/70 leading-relaxed">
-              Discover nature, heritage, and local life at Karangmenjangan — a hidden paradise in the southern coast of Lumajang, East Java.
+              {t('footer.description')}
             </p>
           </div>
 
           <div>
-            <h4 className="font-sans text-lg font-semibold mb-4">Navigation</h4>
+            <h4 className="font-sans text-lg font-semibold mb-4">{t('footer.navigation')}</h4>
             <div className="grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2 md:gap-2">
               {navLinks.map((link) => (
                 <Link
@@ -37,14 +40,14 @@ export default function Footer() {
                   to={link.to}
                   className="font-sans text-sm text-white/70 hover:text-white transition-colors"
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Link>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="font-sans text-lg font-semibold mb-4">Contact</h4>
+            <h4 className="font-sans text-lg font-semibold mb-4">{t('footer.contact')}</h4>
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-white/50 shrink-0" />
@@ -63,23 +66,23 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <MessageCircle className="w-4 h-4 text-white/50 shrink-0" />
                 <a
-                  href="https://api.whatsapp.com/send?phone=6285234791369&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20Karangmenjangan%20tourism"
+                  href="https://api.whatsapp.com/send?phone=6281335269128&text=Hello%2C%20I%20would%20like%20to%20ask%20about%20Karangmenjangan%20tourism"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-white/70 hover:text-white transition-colors"
                 >
-                  +62 852-3479-1369 (Kholis)
+                  +62 813-3526-9128 (Alimin)
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <MessageCircle className="w-4 h-4 text-white/50 shrink-0" />
+                <Share2 className="w-4 h-4 text-white/50 shrink-0" />
                 <a
-                  href="https://api.whatsapp.com/send?phone=6287792097651"
+                  href="https://www.facebook.com/share/1D6Wb8Lp9M/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans text-sm text-white/70 hover:text-white transition-colors"
                 >
-                  +62 877-9209-7651 (Aris)
+                  facebook.com/explore.kawika
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -106,7 +109,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center">
           <p className="font-sans text-sm text-white/50">
-            &copy; {new Date().getFullYear()} KAWIKA (Kampung Wisata Karangmenjangan). All rights reserved.
+            {t('footer.allRights').replace('{year}', String(new Date().getFullYear()))}
           </p>
         </div>
       </div>
